@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 button,
 input,
 select {
@@ -11,7 +17,6 @@ body {
 
 a {
     text-decoration: none;
-    color: #fff;
 }
 
 ul {
@@ -71,9 +76,17 @@ ul {
     font-weight: 500;
 }
 
+.menu__item a {
+    color: #fff;
+}
+
 .main-screen__title {
-    padding: 200px 0;
     text-align: center;
+    margin: 0 auto;
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
 }
 
 .main-screen__title p {
@@ -97,6 +110,12 @@ ul {
     align-items: center;
     background: #B9715E;
     flex-wrap: wrap;
+    position: absolute;
+    bottom: 0;
+}
+
+.form-request__item p {
+    padding-bottom: 10px;
 }
 
 .form-request__wrap {
@@ -136,7 +155,7 @@ ul {
 }
 
 .gallery {
-    padding: 50px;
+    margin: 100px 0;
 }
 
 .images {
@@ -170,17 +189,19 @@ ul {
 }
 
 .advantages__wrap {
-    padding: 20px;
+    padding: 40px 0;
 }
 
 .advantages__text {
     text-align: center;
 }
 
-.advantages__title {
-    color: #000;
+.advantages__title h2 {
     font-family: Alice;
-    font-size: 25px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    color: #000000;
 }
 
 .advantages__description {
@@ -203,7 +224,7 @@ ul {
 .advantages-card {
     width: 26%;
     margin: 0 20px;
-    padding: 20px;
+    padding: 100px 20px;
     text-align: center;
     background: rgba(255, 255, 255, 0.7);
 }
@@ -225,4 +246,229 @@ ul {
     text-align: center;
     letter-spacing: 0.055em;
     color: #8E8E8E;
+}
+
+.rooms {
+    color: #000;
+    margin-top: 150px;
+}
+
+.rooms__title h3 {
+    font-family: Alice;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    color: #000000;
+    margin: 0px;
+}
+
+.rooms__title p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    color: #8E8E8E;
+}
+
+.rooms-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.room-card {
+    width: 30%;
+}
+
+.room-info__text a {
+    font-family: Alice;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 34px;
+    color: #000000;
+}
+
+.room-info__text p {
+    padding-top: 10px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 22px;
+    color: #000000;
+}
+
+.room-link a {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 12px;
+    color: #B9715E;
+}
+
+.room-info {
+    display: flex;
+    align-items: flex-end;
+}
+
+.room-link {
+    display: block;
+    margin-left: 20px;
+}
+
+.review {
+    margin-top: 150px;
+    color: #000;
+}
+
+.review__title {
+    text-align: center;
+}
+
+.review__title h2 {
+    font-family: Alice;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 46px;
+    text-align: center;
+    color: #000000;
+}
+
+.review__title p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.review-content {
+    margin-top: 50px;
+    display: flex;
+}
+
+.review-content__form {
+    margin-left: 30px;
+}
+
+.review-form input {
+    margin-top: 20px;
+}
+
+.review-form__item {
+    display: block;
+    padding: 20px 100px;
+    padding-left: 10px;
+    border: 1px solid rgba(142, 142, 142, 0.5);
+    box-sizing: border-box;
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 18px;
+    color: #8E8E8E;
+}
+
+.form__review {
+    padding: 50px 100px;
+    padding-left: 10px;
+    border: 1px solid rgba(142, 142, 142, 0.5);
+    box-sizing: border-box;
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 18px;
+    /* identical to box height */
+    letter-spacing: 0.055em;
+    color: #8E8E8E;
+}
+
+.review-content__form button {
+    display: block;
+    margin-top: 20px;
+}
+
+.review__btn {
+    font-family: Montserrat, sans-serif;
+    color: #fff;
+    border: none;
+    border: white 1px solid;
+    padding: 15px 40px;
+    background: #B9715E;
+}
+
+.address {
+    margin-top: 150px;
+    color: #000;
+}
+
+.address-title h2 {
+    font-family: Alice;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    color: #000000;
+}
+
+.address-title p {
+    margin-top: 20px;
+    margin: 0 auto;
+    max-width: 40%;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    text-align: center;
+    color: #8E8E8E;
+}
+
+.address-title {
+    text-align: center;
+}
+
+.our-address {
+    margin-top: 50px;
+    background: #B9715E;
+    display: flex;
+    justify-content: space-around;
+    padding: 39px 0;
+}
+
+.street p,
+.city p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    color: #E5E5E5;
+}
+
+.footer__wrap {
+    border-top: 1px solid #000000;
+    padding: 39px 0;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.footer nav ul li a {
+    color: #000;
+}
+
+.footer__wrap .hostel-law {
+    width: 30%;
+}
+
+.footer__wrap .hostel-law p {
+    color: #000;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.footer__wrap .menu {
+    width: 70%;
 }
