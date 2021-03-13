@@ -5,10 +5,154 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/index.css">
+
     <title>hotel</title>
 </head>
 
 <body>
+    <section class="section_100vh main-screen">
+        <div class="container">
+            <header class="header">
+                <div class="logo" style="color: #fff;">
+                    <h1>LOGO</h1>
+                </div>
+
+                <nav class="menu">
+                    <ul>
+                        <li class="menu__item">
+                            <a href="">Главная</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="">О нас</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="">Услуги</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="">Номера</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="">Отзывы</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="">Карта</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="reservation">
+                    <button class=" button-request">
+                        Забронировать
+                    </button>
+                </div>
+
+            </header>
+            <section class="main-screen__content">
+                <div class="main-screen__title">
+                    <p>GRIZZLY</p>
+                    <h1>Ваш комфорт для нас счастье</h1>
+                </div>
+
+                <form action="" class="form-request">
+                    <div class="form-request__wrap">
+                        <div class="form-request__item">
+                            <p>Выбрать номер</p>
+                            <select size="1" class="form-select__item">
+                                <option>Одноместный</option>
+                                <option>Двухместный</option>
+                            </select>
+                        </div>
+                        <div class="form-request__item form-request__date">
+                            <p>Дата заезда</p>
+                            <input type="date">
+                        </div>
+                        <div class="form-request__item form-request__date">
+                            <p>Дата выезда</p>
+                            <input type="date">
+                        </div>
+                        <div class="form-request__item">
+                            <p>Ваш email</p>
+                            <select size="1" class="form-select__item">
+                                <option>По номеру телефона</option>
+                                <option>По email</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="button-request__form">
+                        <input type="submit">
+                    </div>
+                </form>
+            </section>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <div class="container">
+            <div class="images">
+                <div class="image">
+                    <img src="./img/imageSlider/1.jpg" alt="">
+                    <div class="image__text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, laborum.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="advantages">
+        <div class="container">
+            <div class="advantages__wrap">
+                <div class="advantages__text">
+                    <div class="advantages__title">
+                        <h2>Удобства и комфорт</h2>
+                    </div>
+                    <div class="advantages__description">
+                        <p>В нашей гостинице есть все для комфортного отдыха</p>
+                    </div>
+
+                </div>
+
+                <div class="advantages-cards">
+                    <div class="advantages-card">
+                        <div class="advantages-card__img">
+                            <img src="./img/wifi.png" alt="">
+                        </div>
+
+                        <div class="advantages-card__text">
+                            <h3>Бесплатный Wi-Fi</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, eius?</p>
+                        </div>
+                    </div>
+                    <div class="advantages-card">
+                        <div class="advantages-card__img">
+                            <img src="./img/wifi.png" alt="">
+                        </div>
+
+                        <div class="advantages-card__text">
+                            <h3>Бесплатный Wi-Fi</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, eius?</p>
+                        </div>
+                    </div>
+                    <div class="advantages-card">
+                        <div class="advantages-card__img">
+                            <img src="./img/wifi.png" alt="">
+                        </div>
+
+                        <div class="advantages-card__text">
+                            <h3>Бесплатный Wi-Fi</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, eius?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 </body>
 

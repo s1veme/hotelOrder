@@ -1,0 +1,228 @@
+button,
+input,
+select {
+    border: none;
+    outline: none;
+}
+
+body {
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.button-request {
+    font-family: Montserrat, sans-serif;
+    color: #fff;
+    border: none;
+    background: #B9715E;
+    padding: 16px 24px;
+}
+
+.section_100vh {
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.main-screen {
+    background-image: url("../img/background.jpg");
+    background-size: cover;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 10%;
+}
+
+.menu {
+    width: 60%;
+}
+
+.reservation {
+    text-align: center;
+    width: 20%;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu__item {
+    font-family: Montserrat, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.main-screen__title {
+    padding: 200px 0;
+    text-align: center;
+}
+
+.main-screen__title p {
+    font-size: 18px;
+    line-height: 22px;
+    font-family: Montserrat, sans-serif;
+    font-weight: 300;
+}
+
+.main-screen__title h1 {
+    font-family: Alice;
+    font-size: 60px;
+    line-height: 1px;
+    font-weight: normal;
+    letter-spacing: 0.055em;
+}
+
+.form-request {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #B9715E;
+    flex-wrap: wrap;
+}
+
+.form-request__wrap {
+    font-family: Montserrat;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 31px;
+    width: 100%;
+}
+
+.form-request__item {
+    padding: 0 5px;
+}
+
+.form-request input,
+.form-select__item {
+    padding: 10px;
+}
+
+.form-request__date input {
+    padding: 7.5px;
+}
+
+.button-request__form {
+    padding-bottom: 10px;
+}
+
+.button-request__form input {
+    font-family: Montserrat, sans-serif;
+    color: #fff;
+    border: none;
+    background: transparent;
+    border: white 1px solid;
+    padding: 10px 40px;
+}
+
+.gallery {
+    padding: 50px;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+}
+
+.image {
+    position: relative;
+}
+
+.image__text {
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    background: rgba(185, 113, 94, 0.6);
+    max-width: 70%;
+}
+
+.image__text p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    padding: 5px 10px;
+}
+
+.advantages {
+    background: rgba(230, 123, 94, 0.5);
+}
+
+.advantages__wrap {
+    padding: 20px;
+}
+
+.advantages__text {
+    text-align: center;
+}
+
+.advantages__title {
+    color: #000;
+    font-family: Alice;
+    font-size: 25px;
+}
+
+.advantages__description {
+    margin: 0 auto;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    color: #8E8E8E;
+    max-width: 430px;
+}
+
+.advantages-cards {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.advantages-card {
+    width: 26%;
+    margin: 0 20px;
+    padding: 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.advantages-card__text h3 {
+    color: #000000;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.advantages-card__text p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.055em;
+    color: #8E8E8E;
+}
