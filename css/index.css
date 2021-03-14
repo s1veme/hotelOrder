@@ -124,6 +124,7 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     padding: 31px;
     width: 100%;
 }
@@ -286,7 +287,6 @@ ul {
     font-style: normal;
     font-weight: normal;
     font-size: 30px;
-    line-height: 34px;
     color: #000000;
 }
 
@@ -296,7 +296,6 @@ ul {
     font-style: normal;
     font-weight: normal;
     font-size: 17px;
-    line-height: 22px;
     color: #000000;
 }
 
@@ -305,7 +304,6 @@ ul {
     font-style: normal;
     font-weight: 600;
     font-size: 13px;
-    line-height: 12px;
     color: #B9715E;
 }
 
@@ -471,4 +469,101 @@ ul {
 
 .footer__wrap .menu {
     width: 70%;
+}
+
+#menubox {
+    display: none;
+    z-index: 2;
+    font-size: 32px;
+    cursor: pointer;
+    transition: all .6s;
+}
+
+.sidemenu {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 0px;
+    background-color: #222;
+    z-index: 999;
+    padding-top: 100px;
+    overflow-x: hidden;
+    transition: all .5s;
+}
+
+.sidemenu a {
+    padding: 8px 8px 8px 64px;
+    text-decoration: none;
+    font-size: 32px;
+    color: #999;
+    display: block;
+}
+
+.sidemenu a:hover {
+    color: white;
+}
+
+.sidemenu .closebtn {
+    position: absolute;
+    top: 0px;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 32px;
+}
+
+#menubox {
+    display: none;
+}
+
+.sidemenu {
+    display: none;
+}
+
+@media (max-width: 960px) {
+    .container {
+        max-width: 900px;
+    }
+    .room-card {
+        margin-bottom: 50px;
+        width: 50%;
+    }
+    .main-screen__title h1 {
+        font-size: 50px;
+    }
+    .review {
+        margin-top: 100px;
+    }
+    .review-content__form {
+        margin-left: 10px;
+    }
+    .review-form__item {
+        padding-left: 0px;
+        padding: 20px 25px;
+    }
+    .form__review {
+        padding: 50px 25px;
+    }
+    .form-select__item {
+        padding: 7px 6px;
+    }
+    .form-request__wrap {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 720px) {
+    .container {
+        max-width: 700px;
+    }
+    #menubox {
+        display: block;
+    }
+    .menu {
+        display: none;
+    }
+    .logo {
+        display: none;
+    }
+    .form-request {}
 }
