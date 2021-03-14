@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+img {
+    width: 100%;
+}
+
 button,
 input,
 select {
@@ -99,20 +103,23 @@ ul {
 .main-screen__title h1 {
     font-family: Alice;
     font-size: 60px;
-    line-height: 1px;
     font-weight: normal;
-    letter-spacing: 0.055em;
+}
+
+.main-screen__content {
+    display: flex;
+    justify-content: center;
 }
 
 .form-request {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0 auto;
     background: #B9715E;
     flex-wrap: wrap;
     position: absolute;
     bottom: 0;
 }
+
+.form-request__wrap {}
 
 .form-request__item p {
     padding-bottom: 10px;
@@ -143,6 +150,7 @@ ul {
 }
 
 .button-request__form {
+    text-align: center;
     padding-bottom: 10px;
 }
 
@@ -166,6 +174,12 @@ ul {
 
 .image {
     position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.image img {
+    width: 100%;
 }
 
 .image__text {
@@ -520,9 +534,25 @@ ul {
     display: none;
 }
 
+.more-rooms {
+    display: none;
+    text-align: center;
+}
+
+.more-rooms button {
+    background: transparent;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: #000000;
+    border: 1px solid #000000;
+    padding: 20px 17px;
+}
+
 @media (max-width: 960px) {
     .container {
-        max-width: 900px;
+        max-width: 910px;
     }
     .room-card {
         margin-bottom: 50px;
@@ -547,9 +577,6 @@ ul {
     .form-select__item {
         padding: 7px 6px;
     }
-    .form-request__wrap {
-        padding: 20px;
-    }
 }
 
 @media (max-width: 720px) {
@@ -565,5 +592,136 @@ ul {
     .logo {
         display: none;
     }
-    .form-request {}
+    .review-content__form {
+        margin-left: 5px;
+        width: 70%;
+    }
+    .review-form__item {
+        width: 90%;
+        padding-left: 0px;
+        padding: 10px 15px;
+    }
+    .review__btn {
+        margin: 0 auto;
+    }
+    .form__review {
+        width: 90%;
+        padding: 25px 10px;
+    }
+    .form-select__item {
+        padding: 7px 6px;
+    }
+    .header {
+        padding: 20px 0;
+        justify-content: space-between;
+    }
+    .menubox {
+        width: 50%;
+    }
+    .reservation {
+        width: 50%;
+        text-align: right;
+    }
+    .review-content__img {
+        display: none;
+    }
+    .review-content {
+        justify-content: center;
+    }
+    .review-form__item {
+        width: 100%;
+    }
+    .form__review {
+        width: 100%;
+        padding: 40px 0;
+        padding-left: 15px;
+    }
+    .review-content__form {
+        max-width: 100%;
+    }
+    .advantages-card {
+        width: 50%;
+        padding: 100px 20px;
+        margin-bottom: 20px;
+    }
+    .advantages-card__img img {
+        width: 50%;
+        padding-bottom: 34px;
+    }
+    .rooms-cards {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    .room-info {
+        display: flex;
+        justify-content: center;
+    }
+    .room-card {
+        width: 100%;
+    }
+    .room__img {
+        max-width: 55%;
+        margin: 0 auto;
+    }
+    .rooms__title {
+        text-align: center;
+        padding-bottom: 50px;
+    }
+    .rooms__title h2 {
+        padding-bottom: 14px;
+    }
+    .room-info__text p {
+        max-width: 250px;
+    }
+    .form-request {
+        display: none;
+    }
+    .main-screen__title {
+        padding: 20px 0;
+    }
+    .main-screen__title h1 {
+        font-size: 40px;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    .form-request_phone {
+        margin-top: 80px;
+        display: block;
+    }
+    .form-request__wrap {
+        display: flex;
+        text-align: center;
+        background: #B9715E;
+        padding: 60px 0;
+    }
+    .form-request__item {
+        width: 100%;
+        padding-bottom: 23px;
+    }
+    .form-request__item input,
+    .form-request__item select {
+        width: 40%;
+    }
+    .form-request__item p {
+        padding: 18px 0;
+    }
+    .gallery {
+        margin-top: 50px;
+    }
+    .button-request__form {
+        padding-top: 28px;
+    }
+    .button-request__form input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+    .room__img {
+        max-width: 70%;
+    }
 }

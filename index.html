@@ -69,12 +69,41 @@
                     </div>
 
                 </div>
+                <form action="" class="form-request">
+                    <div class="form-request__wrap">
+                        <div class="form-request__item">
+                            <p>Выбрать номер</p>
+                            <select size="1" class="form-select__item">
+                                <option>Одноместный</option>
+                                <option>Двухместный</option>
+                            </select>
+                        </div>
+                        <div class="form-request__item form-request__date">
+                            <p>Дата заезда</p>
+                            <input type="date">
+                        </div>
+                        <div class="form-request__item form-request__date">
+                            <p>Дата выезда</p>
+                            <input type="date">
+                        </div>
+                        <div class="form-request__item">
+                            <p>Ваш email</p>
+                            <select size="1" class="form-select__item">
+                                <option>По номеру телефона</option>
+                                <option>По email</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="button-request__form">
+                        <input type="submit">
+                    </div>
+                </form>
             </section>
         </div>
     </section>
 
-    <div class="form-request__wrap">
-        <form action="" class="form-request">
+    <form action="" class="form-request_phone">
+        <div class="container">
             <div class="form-request__wrap">
                 <div class="form-request__item">
                     <p>Выбрать номер</p>
@@ -98,12 +127,13 @@
                     <option>По email</option>
                 </select>
                 </div>
+                <div class="button-request__form">
+                    <input type="submit">
+                </div>
             </div>
-            <div class="button-request__form">
-                <input type="submit">
-            </div>
-        </form>
-    </div>
+
+        </div>
+    </form>
 
     <section class="gallery">
         <div class="container">
@@ -235,6 +265,10 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="more-rooms">
+                    <button>Больше номеров</button>
                 </div>
             </div>
         </div>
