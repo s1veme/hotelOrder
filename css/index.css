@@ -119,8 +119,6 @@ ul {
     bottom: 0;
 }
 
-.form-request__wrap {}
-
 .form-request__item p {
     padding-bottom: 10px;
 }
@@ -261,6 +259,18 @@ ul {
     text-align: center;
     letter-spacing: 0.055em;
     color: #8E8E8E;
+}
+
+.advantages-card__img img {
+    width: 25%;
+}
+
+.advantages-card__img {
+    padding-bottom: 40px;
+}
+
+.form-request_phone {
+    display: none;
 }
 
 .rooms {
