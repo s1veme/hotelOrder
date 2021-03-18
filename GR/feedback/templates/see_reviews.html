@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.min.js">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-xxl">
+                <a class="navbar-brand" href="{% url 'add_review_url' %}">Главная</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">О нас</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Услуги</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Номера</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Отзывы</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    {% for rev in review %}
+
+    <div class="card">
+        <div class="card-header">
+            {{ rev.date_pub }}
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{ rev.name }}</h5>
+            <p class="card-text">{{ rev.text }}</p>
+        </div>
+    </div>
+    {% endfor %}
+
+</body>
+
+</html>
