@@ -105,13 +105,13 @@
                     <div>
                         <form action="" class="reservation-form">
                             <div class="reservation-form__wrap">
-                                <input type="text" placeholder="Имя">
-                                <input type="text" placeholder="Фамилия">
-                                <input type="text" placeholder="email">
-                                <input type="text" placeholder="Номер телефона">
+                                <input type="text" placeholder="Имя" required>
+                                <input type="text" placeholder="Фамилия" required>
+                                <input type="text" placeholder="email" required>
+                                <input type="text" placeholder="Номер телефона" required maxlength="12">
 
                                 <div class="reservation-form__btn">
-                                    <button class="button-request">Забронировать</button>
+                                    <button class="button-request" type="button">Забронировать</button>
                                 </div>
                             </div>
 
@@ -157,6 +157,9 @@
             </div>
         </div>
     </footer>
+
+    <script src="./js/jquery.js"></script>
+    <script src="./js/sendForm.js"></script>
 </body>
 
 </html>
