@@ -114,11 +114,11 @@
                 </div>
                 <div class="form-request__item form-request__date">
                     <p>Дата заезда</p>
-                    <input type="date">
+                    <input type="date" required>
                 </div>
                 <div class="form-request__item form-request__date">
                     <p>Дата выезда</p>
-                    <input type="date">
+                    <input type="date" required>
                 </div>
                 <div class="form-request__item">
                     <p>Ваш email</p>
@@ -287,12 +287,12 @@
                         <img src="./img/background-review.jpg" alt="">
                     </div>
                     <div class="review-content__form">
-                        <form action="" class="review-form">
-                            <input type="text" placeholder="email" class="review-form__item">
-                            <input type="text" placeholder="Имя" class="review-form__item">
-                            <input type="text" placeholder="Отзыв" class="form__review">
+                        <form action="" class="review-form" id="review__btn">
+                            <input type="text" placeholder="email" class="review-form__item" required maxlength="50">
+                            <input type="text" placeholder="Имя" class="review-form__item" required maxlength="25">
+                            <input type="text" placeholder="Отзыв" class="form__review" required>
 
-                            <button class="review__btn">
+                            <button class="review__btn" type="button">
                                 Отправить
                             </button>
                         </form>
@@ -356,8 +356,8 @@
         </div>
 
     </footer>
-
-
+    <script src="./js/jquery.js"></script>
+    <script src="./js/sendForm.js"></script>
 </body>
 
 </html>
