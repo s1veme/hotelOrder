@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -14,9 +15,9 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="./css/normalize.css" />
-    <link rel="stylesheet" href="./css/home.css" />
-    <link rel="stylesheet" href="./css/sliderHome.css" />
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/sliderHome.css' %}" />
 
     <title>GRIZZLY</title>
   </head>
@@ -140,33 +141,14 @@
       <div class="container">
         <div class="gallery__wrap">
           <div class="images slider">
+            {% for gallery in images %}
             <div class="image slider__item">
-              <img src="./img/imageSlider/1.jpg" alt="" />
+              <img src="{{ gallery.image.url }}" alt="" />
               <div class="image__text">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum,
-                  laborum.
-                </p>
+                <p>{{ gallery.text }}</p>
               </div>
             </div>
-            <div class="image slider__item">
-              <img src="./img/imageSlider/1.jpg" alt="" />
-              <div class="image__text">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum,
-                  laborum.
-                </p>
-              </div>
-            </div>
-            <div class="image slider__item">
-              <img src="./img/imageSlider/1.jpg" alt="" />
-              <div class="image__text">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum,
-                  laborum.
-                </p>
-              </div>
-            </div>
+            {% endfor %}
           </div>
         </div>
       </div>
@@ -187,7 +169,7 @@
           <div class="advantages-cards">
             <div class="advantages-card">
               <div class="advantages-card__img">
-                <img src="./img/wifi.png" alt="" />
+                <img src="{% static 'img/wifi.png' %}" alt="" />
               </div>
 
               <div class="advantages-card__text">
@@ -200,7 +182,7 @@
             </div>
             <div class="advantages-card">
               <div class="advantages-card__img">
-                <img src="./img/wifi.png" alt="" />
+                <img src="{% static 'img/wifi.png' %}" alt="" />
               </div>
 
               <div class="advantages-card__text">
@@ -213,7 +195,7 @@
             </div>
             <div class="advantages-card">
               <div class="advantages-card__img">
-                <img src="./img/wifi.png" alt="" />
+                <img src="{% static 'img/wifi.png' %}" alt="" />
               </div>
 
               <div class="advantages-card__text">
@@ -238,103 +220,28 @@
           </div>
 
           <div class="rooms-cards rooms-slider">
+            {% for room in rooms %}
             <div class="room-card rooms-slider__item">
               <div class="room__img">
-                <img src="./img/imageRooms/1.png" alt="" />
+                <img src="{{ room.poster.url }}" alt="" />
               </div>
               <div class="room-info">
                 <div class="room-info__text">
-                  <a href="">Двуместный номер</a>
-                  <p>Самый популярный тип номера</p>
+                  <a href="">{{ room.title }}</a>
+                  <p>{{ room.short_description }}</p>
                 </div>
                 <div class="room-link">
-                  <a href="#">
+                  <a href="{{ room.get_absolute_url }}">
                     <div class="room-link__text">
                       <p>Больше</p>
-                      <img src="./img/arrow.png" alt="" />
+                      <img src="{% static 'img/arrow.png' %}" alt="" />
                     </div>
                   </a>
                 </div>
               </div>
             </div>
-            <div class="room-card rooms-slider__item">
-              <div class="room__img">
-                <img src="./img/imageRooms/1.png" alt="" />
-              </div>
-              <div class="room-info">
-                <div class="room-info__text">
-                  <a href="">Двуместный номер</a>
-                  <p>Самый популярный тип номера</p>
-                </div>
-                <div class="room-link">
-                  <a href="#">
-                    <div class="room-link__text">
-                      <p>Больше</p>
-                      <img src="./img/arrow.png" alt="" />
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="room-card rooms-slider__item">
-              <div class="room__img">
-                <img src="./img/imageRooms/1.png" alt="" />
-              </div>
-              <div class="room-info">
-                <div class="room-info__text">
-                  <a href="">Двуместный номер</a>
-                  <p>Самый популярный тип номера</p>
-                </div>
-                <div class="room-link">
-                  <a href="#">
-                    <div class="room-link__text">
-                      <p>Больше</p>
-                      <img src="./img/arrow.png" alt="" />
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="room-card rooms-slider__item">
-              <div class="room__img">
-                <img src="./img/imageRooms/1.png" alt="" />
-              </div>
-              <div class="room-info">
-                <div class="room-info__text">
-                  <a href="">Двуместный номер</a>
-                  <p>Самый популярный тип номера</p>
-                </div>
-                <div class="room-link">
-                  <a href="#">
-                    <div class="room-link__text">
-                      <p>Больше</p>
-                      <img src="./img/arrow.png" alt="" />
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="room-card rooms-slider__item">
-              <div class="room__img">
-                <img src="./img/imageRooms/1.png" alt="" />
-              </div>
-              <div class="room-info">
-                <div class="room-info__text">
-                  <a href="">Двуместный номер</a>
-                  <p>Самый популярный тип номера</p>
-                </div>
-                <div class="room-link">
-                  <a href="#">
-                    <div class="room-link__text">
-                      <p>Больше</p>
-                      <img src="./img/arrow.png" alt="" />
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
+            {% endfor %}
           </div>
-
           <div class="more-rooms">
             <button>Больше номеров</button>
           </div>
@@ -352,7 +259,7 @@
 
           <div class="review-content">
             <div class="review-content__img">
-              <img src="./img/background-review.jpg" alt="" />
+              <img src="{% static 'img/background-review.jpg' %}" alt="" />
             </div>
             <div class="review-content__form">
               <form action="" class="review-form" id="review__btn">
@@ -443,9 +350,9 @@
         </div>
       </div>
     </footer>
-    <script src="./js/jquery.js"></script>
-    <script src="./js/slick.min.js"></script>
-    <script src="./js/sliderHome.js"></script>
-    <script src="./js/sendForm.js"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/slick.min.js' %}"></script>
+    <script src="{% static 'js/sliderHome.js' %}"></script>
+    <script src="{% static 'js/sendForm.js' %}"></script>
   </body>
 </html>

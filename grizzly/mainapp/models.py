@@ -1,5 +1,7 @@
 from django.db import models
 
+from django.urls import reverse
+
 
 class Room(models.Model):
     title = models.CharField('Название', max_length=150, db_index=True)
@@ -26,10 +28,13 @@ class Room(models.Model):
         'Картинка для карточки', null=True, upload_to='images/poster/')
 
     def __str__(self):
-        return {self.title}
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse('room', kwargs={"slug": self.slug})
 
     class Meta:
-        verbose_name = 'комната'
+        verbose_name = 'комнату'
         verbose_name_plural = 'комнаты'
 
 
@@ -37,9 +42,12 @@ class Gallery(models.Model):
     image = models.ImageField(
         null=True, upload_to='images/gallery', default=None)
 
+    text = models.CharField(
+        'Текст на картинке', max_length=30, help_text='Текст будет поверх картинки')
+
     class Meta:
         verbose_name = 'галерея'
-        verbose_name_plural = 'галерея'
+        verbose_name_plural = 'галерею'
 
 
 class Image(models.Model):
@@ -48,7 +56,7 @@ class Image(models.Model):
         Room, default=None, related_name='room_image', on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.room
+        return f'{self.room}'
 
     class Meta:
         verbose_name = 'Картинка'

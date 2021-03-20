@@ -15,7 +15,7 @@ class RoomAdmin(admin.ModelAdmin):
     save_on_top = True
 
     def get_image(self, obj):
-        return mark_safe(f'<img src={obj.image.url} width="80" height="80">')
+        return mark_safe(f'<img src={obj.poster.url} width="80" height="80">')
 
     get_image.short_description = 'Изображение'
 
