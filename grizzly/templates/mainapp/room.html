@@ -32,31 +32,22 @@
 
           <div id="menubox" onclick="openFunction()">&#9776;</div>
           <div id="menu" class="sidemenu">
-            <a href="#">Обо мне</a>
-            <a href="#">Проекты</a>
-            <a href="#">Контакты</a>
+            <a href="/">Главная</a>
+            <a href="#room"><b>Номер</b></a>
+            <a href="#reservation">Забронировать</a>
             <a href="#" class="closebtn" onclick="closeFunction()">&times;</a>
           </div>
 
           <nav class="menu">
             <ul>
               <li class="menu__item">
-                <a href="">Главная</a>
+                <a href="/">Главная</a>
               </li>
               <li class="menu__item">
-                <a href="">О нас</a>
+                <a href="#room"><b>Номер</b></a>
               </li>
               <li class="menu__item">
-                <a href="">Услуги</a>
-              </li>
-              <li class="menu__item">
-                <a href=""><b>Номер</b></a>
-              </li>
-              <li class="menu__item">
-                <a href="">Отзывы</a>
-              </li>
-              <li class="menu__item">
-                <a href="">Карта</a>
+                <a href="#reservation">Забронировать</a>
               </li>
             </ul>
           </nav>
@@ -69,7 +60,7 @@
     </header>
 
     <main>
-      <section class="room section_100vh">
+      <section class="room section_100vh" id="room">
         <div class="container">
           <div class="room__wrap">
             <div class="slider">
@@ -104,7 +95,7 @@
             </div>
           </div>
 
-          <div class="reservation">
+          <div class="reservation" id="reservation">
             <div class="reservation__wrap">
               <div class="reservation__title">
                 <h2>Заполните форму для брони номера</h2>

@@ -32,31 +32,34 @@
 
           <div id="menubox" onclick="openFunction()">&#9776;</div>
           <div id="menu" class="sidemenu">
-            <a href="#">Обо мне</a>
-            <a href="#">Проекты</a>
-            <a href="#">Контакты</a>
+            <a href="#main-screen__content">Главная</a>
+            <a href="#gallery">О нас</a>
+            <a href="#advantages">Услуги</a>
+            <a href="#rooms">Номера</a>
+            <a href="/reviews">Отзывы</a>
+            <a href="#address">Карта</a>
             <a href="#" class="closebtn" onclick="closeFunction()">&times;</a>
           </div>
 
           <nav class="menu">
             <ul>
               <li class="menu__item">
-                <a href="">Главная</a>
+                <a href="#main-screen__content">Главная</a>
               </li>
               <li class="menu__item">
-                <a href="">О нас</a>
+                <a href="#gallery">О нас</a>
               </li>
               <li class="menu__item">
-                <a href="">Услуги</a>
+                <a href="#advantages">Услуги</a>
               </li>
               <li class="menu__item">
-                <a href="">Номера</a>
+                <a href="#rooms">Номера</a>
               </li>
               <li class="menu__item">
-                <a href="">Отзывы</a>
+                <a href="/reviews">Отзывы</a>
               </li>
               <li class="menu__item">
-                <a href="">Карта</a>
+                <a href="#address">Карта</a>
               </li>
             </ul>
           </nav>
@@ -65,7 +68,7 @@
             <button class="button-request">Забронировать</button>
           </div>
         </header>
-        <section class="main-screen__content">
+        <section class="main-screen__content" id="main-screen__content">
           <div class="main-screen__wrap">
             <div class="main-screen__title">
               <p>GRIZZLY</p>
@@ -137,7 +140,7 @@
       </div>
     </form>
 
-    <section class="gallery">
+    <section class="gallery" id="gallery">
       <div class="container">
         <div class="gallery__wrap">
           <div class="images slider">
@@ -154,7 +157,7 @@
       </div>
     </section>
 
-    <section class="advantages">
+    <section class="advantages" id="advantages">
       <div class="container">
         <div class="advantages__wrap">
           <div class="advantages__text">
@@ -211,7 +214,7 @@
       </div>
     </section>
 
-    <section class="rooms">
+    <section class="rooms" id="rooms">
       <div class="container">
         <div class="rooms__wrap">
           <div class="rooms__title">
@@ -262,7 +265,7 @@
               <img src="{% static 'img/background-review.jpg' %}" alt="" />
             </div>
             <div class="review-content__form">
-              <form action="" class="review-form" id="review__btn">
+              <form action="" class="review-form" id="reviewForm">
                 <input
                   type="text"
                   placeholder="email"
@@ -284,7 +287,7 @@
                   required
                 />
 
-                <button class="review__btn" type="button">Отправить</button>
+                <button class="review__btn" type="submit">Отправить</button>
               </form>
             </div>
           </div>
@@ -292,7 +295,7 @@
       </div>
     </section>
 
-    <section class="address">
+    <section class="address" id="address">
       <div class="container">
         <div class="address__wrap">
           <div class="address-title">
