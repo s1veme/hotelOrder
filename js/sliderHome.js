@@ -27,4 +27,38 @@ $(document).ready(function() {
             }
         ]
     });
+    $('.rooms-slider').slick({
+        arrows: true,
+        dots: true,
+        slidesToShow: 3,
+        speed: 1000,
+        responsive: [{
+                breakpoint: 961,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 1
+                }
+            },
+            {
+                breakpoint: 620,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 1
+                }
+            },
+            {
+                breakpoint: 577,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
 });

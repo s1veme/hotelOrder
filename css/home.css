@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    border: none;
+    outline: none;
 }
 
 img {
@@ -295,14 +297,16 @@ ul {
 }
 
 .rooms-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     margin-top: 50px;
 }
 
 .room-card {
+    padding: 30px;
     width: 30%;
+}
+
+.room__img {
+    width: 100%;
 }
 
 .room-info__text a {
@@ -662,11 +666,6 @@ ul {
         width: 50%;
         padding-bottom: 34px;
     }
-    .rooms-cards {
-        display: flex;
-        justify-content: center;
-        margin: 0 auto;
-    }
     .room-info {
         display: flex;
         justify-content: center;
@@ -675,7 +674,7 @@ ul {
         width: 100%;
     }
     .room__img {
-        max-width: 60%;
+        max-width: 70%;
         margin: 0 auto;
     }
     .rooms__title {
@@ -721,7 +720,7 @@ ul {
         padding: 18px 0;
     }
     .gallery {
-        margin-top: 50px;
+        margin-top: 75px;
     }
     .button-request__form {
         padding-top: 28px;
@@ -736,6 +735,6 @@ ul {
         max-width: 540px;
     }
     .room__img {
-        max-width: 70%;
+        max-width: 80%;
     }
 }
