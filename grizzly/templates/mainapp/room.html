@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/room.css">
+    <link rel="stylesheet" href="./css/sliderRoom.css">
+
+    <title>GRIZZLY</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__wrap">
+                <div class="logo" style="color: #fff;">
+                    <h1>LOGO</h1>
+                </div>
+
+                <div id="menubox" onclick="openFunction()">&#9776;</div>
+                <div id="menu" class="sidemenu">
+                    <a href="#">Обо мне</a>
+                    <a href="#">Проекты</a>
+                    <a href="#">Контакты</a>
+                    <a href="#" class="closebtn" onclick="closeFunction()">&times;</a>
+                </div>
+
+                <nav class="menu">
+                    <ul>
+                        <li class="menu__item">
+                            <a href="">Главная</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="">О нас</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="">Услуги</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href=""><b>Номер</b></a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="">Отзывы</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="">Карта</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="reservation__btn">
+                    <button class=" button-request">
+                Забронировать
+            </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="room section_100vh">
+            <div class="container">
+                <div class="room__wrap">
+                    <div class="slider">
+                        <div class="room__img slider__item">
+                            <img src="./img/imageRoom/1.jpg" alt="">
+                        </div>
+                        <div class="room__img slider__item">
+                            <img src="./img/imageRoom/1.jpg" alt="">
+                        </div>
+                        <div class="room__img slider__item">
+                            <img src="./img/imageRoom/1.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-info">
+                    <div class="room__title">
+                        <h1>Двухместный номер</h1>
+                    </div>
+                    <div class="room__description">
+                        <p>
+                            Окна этого номера, выходят на тихий, милый дворик. В данном номере, имеется ( две удобные односпальные кровати с артопедическим матрасом) удобная двуспальная кровать с артопедическим матрасом. Также в номере предусмотрена рабочая зона, с функциональным
+                            рабочим столом и телефоном, шкаф для вешей. Просторная ванная комната оборудована всеми необходимыми принадлежностями.Обстановка номера окружит Вас уютом и домашним теплом, а для этого в номерах есть беспроводной интернет,
+                            спутниковое телевидение, холодильник, кондиционер, чайник.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="additional-info section_100vh">
+            <div class="container">
+                <div class="characteristics">
+                    <div class="characteristics__wrap">
+                        <h2>Основные характеристики</h2>
+
+                        <p>2600 рублей за сутки</p>
+                        <p>23 кв. метра</p>
+                        <p>2 кровати</p>
+                    </div>
+                </div>
+
+                <div class="reservation">
+                    <div class="reservation__wrap">
+                        <div class="reservation__title">
+                            <h2>Заполните форму для брони номера</h2>
+                        </div>
+                    </div>
+
+                    <div>
+                        <form action="" class="reservation-form">
+                            <div class="reservation-form__wrap">
+                                <input type="text" placeholder="Имя" required>
+                                <input type="text" placeholder="Фамилия" required>
+                                <input type="text" placeholder="email" required>
+                                <input type="text" placeholder="Номер телефона" required maxlength="12">
+
+                                <div class="reservation-form__btn">
+                                    <button class="button-request" type="button">Забронировать</button>
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrap">
+                <div class="hostel-law">
+                    <p>© 2021 гостиница все права защищены</p>
+                </div>
+
+                <nav class="menu">
+                    <ul>
+                        <li class="menu__item">
+                            <a href="">Главная</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="">О нас</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="">Услуги</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="">Номера</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="">Отзывы</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="">Карта</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/jquery.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script src="./js/sliderRoom.js"></script>
+    <script src="./js/sendForm.js"></script>
+</body>
+
+</html>

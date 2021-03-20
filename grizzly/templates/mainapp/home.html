@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alice&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/sliderHome.css" />
+
+    <title>GRIZZLY</title>
+  </head>
+
+  <body>
+    <section class="section_100vh main-screen">
+      <div class="container">
+        <header class="header">
+          <div class="logo" style="color: #fff">
+            <h1>LOGO</h1>
+          </div>
+
+          <div id="menubox" onclick="openFunction()">&#9776;</div>
+          <div id="menu" class="sidemenu">
+            <a href="#">Обо мне</a>
+            <a href="#">Проекты</a>
+            <a href="#">Контакты</a>
+            <a href="#" class="closebtn" onclick="closeFunction()">&times;</a>
+          </div>
+
+          <nav class="menu">
+            <ul>
+              <li class="menu__item">
+                <a href="">Главная</a>
+              </li>
+              <li class="menu__item">
+                <a href="">О нас</a>
+              </li>
+              <li class="menu__item">
+                <a href="">Услуги</a>
+              </li>
+              <li class="menu__item">
+                <a href="">Номера</a>
+              </li>
+              <li class="menu__item">
+                <a href="">Отзывы</a>
+              </li>
+              <li class="menu__item">
+                <a href="">Карта</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="reservation">
+            <button class="button-request">Забронировать</button>
+          </div>
+        </header>
+        <section class="main-screen__content">
+          <div class="main-screen__wrap">
+            <div class="main-screen__title">
+              <p>GRIZZLY</p>
+              <h1>Ваш комфорт для нас счастье</h1>
+            </div>
+          </div>
+          <form action="" class="form-request">
+            <div class="form-request__wrap">
+              <div class="form-request__item">
+                <p>Выбрать номер</p>
+                <select size="1" class="form-select__item">
+                  <option>Одноместный</option>
+                  <option>Двухместный</option>
+                </select>
+              </div>
+              <div class="form-request__item form-request__date">
+                <p>Дата заезда</p>
+                <input type="date" />
+              </div>
+              <div class="form-request__item form-request__date">
+                <p>Дата выезда</p>
+                <input type="date" />
+              </div>
+              <div class="form-request__item">
+                <p>Ваш email</p>
+                <select size="1" class="form-select__item">
+                  <option>По номеру телефона</option>
+                  <option>По email</option>
+                </select>
+              </div>
+            </div>
+            <div class="button-request__form">
+              <input type="submit" />
+            </div>
+          </form>
+        </section>
+      </div>
+    </section>
+
+    <form action="" class="form-request_phone">
+      <div class="container">
+        <div class="form-request__wrap">
+          <div class="form-request__item">
+            <p>Выбрать номер</p>
+            <select size="1" class="form-select__item">
+              <option>Одноместный</option>
+              <option>Двухместный</option>
+            </select>
+          </div>
+          <div class="form-request__item form-request__date">
+            <p>Дата заезда</p>
+            <input type="date" required />
+          </div>
+          <div class="form-request__item form-request__date">
+            <p>Дата выезда</p>
+            <input type="date" required />
+          </div>
+          <div class="form-request__item">
+            <p>Ваш email</p>
+            <select size="1" class="form-select__item">
+              <option>По номеру телефона</option>
+              <option>По email</option>
+            </select>
+          </div>
+          <div class="button-request__form">
+            <input type="submit" />
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <section class="gallery">
+      <div class="container">
+        <div class="gallery__wrap">
+          <div class="images slider">
+            <div class="image slider__item">
+              <img src="./img/imageSlider/1.jpg" alt="" />
+              <div class="image__text">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum,
+                  laborum.
+                </p>
+              </div>
+            </div>
+            <div class="image slider__item">
+              <img src="./img/imageSlider/1.jpg" alt="" />
+              <div class="image__text">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum,
+                  laborum.
+                </p>
+              </div>
+            </div>
+            <div class="image slider__item">
+              <img src="./img/imageSlider/1.jpg" alt="" />
+              <div class="image__text">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum,
+                  laborum.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="advantages">
+      <div class="container">
+        <div class="advantages__wrap">
+          <div class="advantages__text">
+            <div class="advantages__title">
+              <h2>Удобства и комфорт</h2>
+            </div>
+            <div class="advantages__description">
+              <p>В нашей гостинице есть все для комфортного отдыха</p>
+            </div>
+          </div>
+
+          <div class="advantages-cards">
+            <div class="advantages-card">
+              <div class="advantages-card__img">
+                <img src="./img/wifi.png" alt="" />
+              </div>
+
+              <div class="advantages-card__text">
+                <h3>Бесплатный Wi-Fi</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Soluta, eius?
+                </p>
+              </div>
+            </div>
+            <div class="advantages-card">
+              <div class="advantages-card__img">
+                <img src="./img/wifi.png" alt="" />
+              </div>
+
+              <div class="advantages-card__text">
+                <h3>Бесплатный Wi-Fi</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Soluta, eius?
+                </p>
+              </div>
+            </div>
+            <div class="advantages-card">
+              <div class="advantages-card__img">
+                <img src="./img/wifi.png" alt="" />
+              </div>
+
+              <div class="advantages-card__text">
+                <h3>Бесплатный Wi-Fi</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Soluta, eius?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rooms">
+      <div class="container">
+        <div class="rooms__wrap">
+          <div class="rooms__title">
+            <h3>Наши номера</h3>
+            <p>Наши самые популярные номера</p>
+          </div>
+
+          <div class="rooms-cards rooms-slider">
+            <div class="room-card rooms-slider__item">
+              <div class="room__img">
+                <img src="./img/imageRooms/1.png" alt="" />
+              </div>
+              <div class="room-info">
+                <div class="room-info__text">
+                  <a href="">Двуместный номер</a>
+                  <p>Самый популярный тип номера</p>
+                </div>
+                <div class="room-link">
+                  <a href="#">
+                    <div class="room-link__text">
+                      <p>Больше</p>
+                      <img src="./img/arrow.png" alt="" />
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="room-card rooms-slider__item">
+              <div class="room__img">
+                <img src="./img/imageRooms/1.png" alt="" />
+              </div>
+              <div class="room-info">
+                <div class="room-info__text">
+                  <a href="">Двуместный номер</a>
+                  <p>Самый популярный тип номера</p>
+                </div>
+                <div class="room-link">
+                  <a href="#">
+                    <div class="room-link__text">
+                      <p>Больше</p>
+                      <img src="./img/arrow.png" alt="" />
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="room-card rooms-slider__item">
+              <div class="room__img">
+                <img src="./img/imageRooms/1.png" alt="" />
+              </div>
+              <div class="room-info">
+                <div class="room-info__text">
+                  <a href="">Двуместный номер</a>
+                  <p>Самый популярный тип номера</p>
+                </div>
+                <div class="room-link">
+                  <a href="#">
+                    <div class="room-link__text">
+                      <p>Больше</p>
+                      <img src="./img/arrow.png" alt="" />
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="room-card rooms-slider__item">
+              <div class="room__img">
+                <img src="./img/imageRooms/1.png" alt="" />
+              </div>
+              <div class="room-info">
+                <div class="room-info__text">
+                  <a href="">Двуместный номер</a>
+                  <p>Самый популярный тип номера</p>
+                </div>
+                <div class="room-link">
+                  <a href="#">
+                    <div class="room-link__text">
+                      <p>Больше</p>
+                      <img src="./img/arrow.png" alt="" />
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="room-card rooms-slider__item">
+              <div class="room__img">
+                <img src="./img/imageRooms/1.png" alt="" />
+              </div>
+              <div class="room-info">
+                <div class="room-info__text">
+                  <a href="">Двуместный номер</a>
+                  <p>Самый популярный тип номера</p>
+                </div>
+                <div class="room-link">
+                  <a href="#">
+                    <div class="room-link__text">
+                      <p>Больше</p>
+                      <img src="./img/arrow.png" alt="" />
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="more-rooms">
+            <button>Больше номеров</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="review">
+      <div class="container">
+        <div class="review__wrap">
+          <div class="review__title">
+            <h2>Отправьте свой отзыв</h2>
+            <p>Ваше мнение нам очень важно</p>
+          </div>
+
+          <div class="review-content">
+            <div class="review-content__img">
+              <img src="./img/background-review.jpg" alt="" />
+            </div>
+            <div class="review-content__form">
+              <form action="" class="review-form" id="review__btn">
+                <input
+                  type="text"
+                  placeholder="email"
+                  class="review-form__item"
+                  required
+                  maxlength="50"
+                />
+                <input
+                  type="text"
+                  placeholder="Имя"
+                  class="review-form__item"
+                  required
+                  maxlength="25"
+                />
+                <input
+                  type="text"
+                  placeholder="Отзыв"
+                  class="form__review"
+                  required
+                />
+
+                <button class="review__btn" type="button">Отправить</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="address">
+      <div class="container">
+        <div class="address__wrap">
+          <div class="address-title">
+            <h2>Наш адресс</h2>
+            <p>Если возникают вопросы, то позвоните по номеру в конце сайта</p>
+          </div>
+          <div class="our-address">
+            <div class="street">
+              <p>Малая Пионерская улица, 13с2</p>
+            </div>
+            <div class="city">
+              <p>Москва, Россия, 115054</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script
+      type="text/javascript"
+      charset="utf-8"
+      async
+      src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Adae9c3889c073b16b7e6adbdf077f5c8fb7e6ec7d038e91c7e09d894004994eb&amp;width=100%25&amp;height=462&amp;lang=ru_RU&amp;scroll=true"
+    ></script>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__wrap">
+          <div class="hostel-law">
+            <p>© 2021 гостиница все права защищены</p>
+          </div>
+
+          <nav class="menu">
+            <ul>
+              <li class="menu__item">
+                <a href="">Главная</a>
+              </li>
+              <li class="menu__item">
+                <a href="">О нас</a>
+              </li>
+              <li class="menu__item">
+                <a href="">Услуги</a>
+              </li>
+              <li class="menu__item">
+                <a href="">Номера</a>
+              </li>
+              <li class="menu__item">
+                <a href="">Отзывы</a>
+              </li>
+              <li class="menu__item">
+                <a href="">Карта</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </footer>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script src="./js/sliderHome.js"></script>
+    <script src="./js/sendForm.js"></script>
+  </body>
+</html>
