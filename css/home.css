@@ -590,6 +590,10 @@ ul {
 }
 
 @media (max-width: 720px) {
+    .main-screen {
+        background: url('../img/background-phone.jpg') center center no-repeat;
+        background-size: cover;
+    }
     .container {
         max-width: 700px;
     }
