@@ -165,9 +165,8 @@ ul {
     margin: 100px 0;
 }
 
-.images {
+.gallery__wrap {
     display: flex;
-    justify-content: center;
 }
 
 .image {
@@ -182,8 +181,8 @@ ul {
 
 .image__text {
     position: absolute;
-    bottom: 4px;
-    left: 0;
+    bottom: 0;
+    left: 1.4%;
     background: rgba(185, 113, 94, 0.6);
     max-width: 70%;
 }
@@ -194,7 +193,7 @@ ul {
     font-weight: normal;
     font-size: 20px;
     line-height: 30px;
-    padding: 5px 10px;
+    padding: 30px 10px;
 }
 
 .advantages {
@@ -565,6 +564,7 @@ ul {
         max-width: 910px;
     }
     .room-card {
+        padding: 0 50px;
         margin-bottom: 50px;
         width: 50%;
     }
@@ -619,7 +619,7 @@ ul {
         padding: 25px 10px;
     }
     .form-select__item {
-        padding: 7px 6px;
+        padding: 7px 10px;
     }
     .header {
         padding: 20px 0;
@@ -651,8 +651,8 @@ ul {
     }
     .advantages-card {
         width: 50%;
-        padding: 100px 20px;
-        margin-bottom: 20px;
+        padding: 50px 20px;
+        margin-bottom: 35px;
     }
     .advantages-card__img img {
         width: 50%;
@@ -671,7 +671,7 @@ ul {
         width: 100%;
     }
     .room__img {
-        max-width: 55%;
+        max-width: 60%;
         margin: 0 auto;
     }
     .rooms__title {
@@ -711,7 +711,7 @@ ul {
     }
     .form-request__item input,
     .form-request__item select {
-        width: 40%;
+        width: 60%;
     }
     .form-request__item p {
         padding: 18px 0;
