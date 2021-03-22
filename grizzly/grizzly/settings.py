@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'mainapp',
-    'reviews'
+    'snowpenguin.django.recaptcha3'
 ]
 
 MIDDLEWARE = [
@@ -133,3 +133,8 @@ STATICFILES_DIRS = [STATIC_DIR]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+RECAPTCHA_PRIVATE_KEY = '6LeuRoQaAAAAAMhxBUs_JOTRv7InEAfn2_0S4Eml'
+RECAPTCHA_PUBLIC_KEY = '6LeuRoQaAAAAABWZSythkGbtQa-ycSxo9q3K89zz'
+RECAPTCHA_DEFAULT_ACTION = 'generic'
+RECAPTCHA_SCORE_THRESHOLD = 0.5

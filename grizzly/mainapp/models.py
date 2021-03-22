@@ -2,6 +2,8 @@ from django.db import models
 
 from django.urls import reverse
 
+from datetime import date
+
 
 class Room(models.Model):
     title = models.CharField('Название', max_length=150, db_index=True)
@@ -61,3 +63,13 @@ class Image(models.Model):
     class Meta:
         verbose_name = 'Картинка'
         verbose_name_plural = 'Картинки'
+
+
+class Review(models.Model):
+    email = models.EmailField(unique=True)
+    name = models.CharField("Имя", max_length=100, db_index=True)
+    text = models.TextField("Сообщение", max_length=2500)
+    date_pub = models.DateTimeField(default=date.today)
+
+    def __str__(self):
+        return self.name

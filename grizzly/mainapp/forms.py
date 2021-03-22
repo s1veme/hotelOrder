@@ -1,11 +1,11 @@
 from django import forms
 from django.db import models
-from .models import Review
 from django.core.exceptions import ValidationError
 from snowpenguin.django.recaptcha3.fields import ReCaptchaField
 
+from .models import Review
 
-# Форма отзывов
+
 class ReviewForm(forms.ModelForm):
     captcha = ReCaptchaField()
 
@@ -14,9 +14,9 @@ class ReviewForm(forms.ModelForm):
         fields = ['text', 'name', 'email', 'captcha']
 
         widgets = {
-            'text': forms.TextInput(attrs={'class': 'form-control'}),
-            'name': forms.TextInput(attrs={'class': 'form-control'}),
-            'email': forms.TextInput(attrs={'class': 'form-control'}),
+            'text': forms.TextInput(attrs={'class': 'form__review', 'type': 'text', 'placeholder': 'Напишите отзыв'}),
+            'name': forms.TextInput(attrs={'class': 'review-form__item', 'type': 'text', 'placeholder': 'Имя'}),
+            'email': forms.TextInput(attrs={'class': 'review-form__item', 'type': 'text', 'placeholder': 'email'}),
         }
 
     def clean_email(self):
