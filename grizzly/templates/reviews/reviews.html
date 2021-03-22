@@ -57,11 +57,11 @@
       <section class="reviews" id="reviews">
         <div class="container">
           <div class="reviews__wrap">
-            {% for review in reviews %}
+            {% for review in form %}
             <div class="review">
-              <h3>{{ review.name }}</h3>
-              <p class="review-text">{{ review.text }}</p>
-              <p class="review-date">{{ review.date_pub }}</p>
+              <h3>{{ form.name }}</h3>
+              <p class="review-text">{{ form.text }}</p>
+              <p class="review-date">{{ form.date_pub }}</p>
             </div>
             {% endfor %}
           </div>

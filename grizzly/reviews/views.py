@@ -19,7 +19,6 @@ class ReviewList(ListView):
 
     def post(self, request, *args, **kwargs):
         bound_form = ReviewForm(request.POST)
-
         if bound_form.is_valid():
             new_review = bound_form.save()
             return redirect('detail_review_url')
