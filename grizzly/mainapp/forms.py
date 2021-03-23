@@ -61,15 +61,12 @@ class RoomReservation(forms.Form):
 
 class MainRegistrationForm(forms.Form):
     number_selection = forms.ModelChoiceField(
-        label="Выбрать номер", empty_label="Категория не выбрана", queryset=Room.objects.all())
-    arrival_date = forms.DateField(label="Дата заезда", widget=AdminDateWidget)
-    departure_date = forms.DateField(
-        label="Дата отъезда", widget=AdminDateWidget)
-    email = forms.EmailField()
+        label="Выбрать номер", empty_label="Номер не выбран", queryset=Room.objects.all(), widget=forms.Select(attrs={'class': 'form-select__item'}))
 
-    widgets = {
-        'number_selection': forms.TextInput(attrs={'class': 'Main_Registration_Form', 'type': 'text'}),
-        'arrival date': forms.TextInput(attrs={'class': 'Main_Registration_Form', 'type': 'text'}),
-        'departure date': forms.TextInput(attrs={'class': 'Main_Registration_Form', 'type': 'text'}),
-        'email': forms.TextInput(attrs={'class': 'Main_Registration_Form', 'type': 'text', 'placeholder': 'email'}),
-    }
+    arrival_date = forms.DateField(
+        label="Дата заезда", widget=forms.SelectDateWidget(attrs={'style': 'padding: 10px 3px;'}))
+
+    departure_date = forms.DateField(
+        label="Дата отъезда", widget=forms.SelectDateWidget(attrs={'style': 'padding: 10px 3px;'}))
+    email = forms.EmailField(widget=forms.EmailInput(
+        attrs={'style': 'padding: 12px 3px;'}))

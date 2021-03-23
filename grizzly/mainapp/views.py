@@ -6,7 +6,7 @@ from django.views.generic.base import View
 from django.views.generic import DetailView, ListView
 
 from .models import Gallery, Room, Image, Review
-from .forms import ReviewForm, RoomReservation
+from .forms import ReviewForm, RoomReservation, MainRegistrationForm
 
 
 class ReviewList(ListView):
@@ -29,11 +29,19 @@ class ReviewList(ListView):
 class HomeView(View):
     gallery = Gallery.objects.all()
     rooms = Room.objects.all()
-    form = ReviewForm()
+    form_review = ReviewForm()
+    form_reservation = MainRegistrationForm()
 
-    queryset_dict = {'images': gallery, 'rooms': rooms, 'form': form}
+    queryset_dict = {'images': gallery, 'rooms': rooms,
+                     'form': form_review, 'form_reservation': form_reservation}
 
     def get(self, request, *args, **kwargs):
+        return render(request, 'mainapp/home.html', self.queryset_dict)
+
+    def post(self, request, *args, **kwargs):
+        # TODO: Сделать уведомление и отправку на почту, валидацию.
+
+        print(request.POST)
         return render(request, 'mainapp/home.html', self.queryset_dict)
 
 
@@ -56,10 +64,7 @@ class RoomDetail(DetailView):
         return context
 
     def post(self, request, *args, **kwargs):
-
-        # if bound_form.is_valid():
-        #    return redirect('home')
-
-        print(request.POST)
+        # TODO: Отправка на почту
+        #bound_form = RoomReservation(request.POST)
 
         return redirect('home')

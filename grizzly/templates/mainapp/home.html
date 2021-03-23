@@ -77,29 +77,24 @@
               <h1>Ваш комфорт для нас счастье</h1>
             </div>
           </div>
-          <form action="" class="form-request">
+          <form action="{% url 'home' %}" class="form-request" method="post">
+          {% csrf_token %}
             <div class="form-request__wrap">
               <div class="form-request__item">
                 <p>Выбрать номер</p>
-                <select size="1" class="form-select__item">
-                  <option>Одноместный</option>
-                  <option>Двухместный</option>
-                </select>
+                {{ form_reservation.number_selection }}
               </div>
               <div class="form-request__item form-request__date">
                 <p>Дата заезда</p>
-                <input type="date" />
+                {{ form_reservation.arrival_date }}
               </div>
               <div class="form-request__item form-request__date">
                 <p>Дата выезда</p>
-                <input type="date" />
+                {{ form_reservation.departure_date}}
               </div>
               <div class="form-request__item">
                 <p>Ваш email</p>
-                <select size="1" class="form-select__item">
-                  <option>По номеру телефона</option>
-                  <option>По email</option>
-                </select>
+                {{ form_reservation.email }}
               </div>
             </div>
             <div class="button-request__form">
@@ -111,32 +106,27 @@
     </section>
 
     <form action="" class="form-request_phone">
+      {% csrf_token %}
       <div class="container">
         <div class="form-request__wrap">
           <div class="form-request__item">
             <p>Выбрать номер</p>
-            <select size="1" class="form-select__item">
-              <option>Одноместный</option>
-              <option>Двухместный</option>
-            </select>
+            {{ form_reservation.number_selection }}
           </div>
           <div class="form-request__item form-request__date">
             <p>Дата заезда</p>
-            <input type="date" required />
+            {{ form_reservation.arrival_date }}
           </div>
           <div class="form-request__item form-request__date">
             <p>Дата выезда</p>
-            <input type="date" required />
+            {{ form_reservation.departure_date}}
           </div>
           <div class="form-request__item">
             <p>Ваш email</p>
-            <select size="1" class="form-select__item">
-              <option>По номеру телефона</option>
-              <option>По email</option>
-            </select>
+            {{ form_reservation.email }}
           </div>
           <div class="button-request__form">
-            <input type="submit" />
+            <input type="submit">Отправить</input>
           </div>
         </div>
       </div>
