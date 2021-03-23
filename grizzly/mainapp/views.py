@@ -56,10 +56,10 @@ class RoomDetail(DetailView):
         return context
 
     def post(self, request, *args, **kwargs):
-        bound_form = RoomReservation(request.POST)
 
         # if bound_form.is_valid():
-        #    new_application = bound_form.save()
         #    return redirect('home')
+
+        print(request.POST)
 
         return redirect('home')

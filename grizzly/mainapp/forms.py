@@ -34,15 +34,6 @@ class ReviewForm(forms.ModelForm):
 
 class RoomReservation(forms.Form):
 
-    slug = forms.ModelMultipleChoiceField(queryset=Room.objects.all())
-
-    def __init__(self, *args, room_slug=None, **kwargs):
-        super(forms.Form, self).__init__(*args, **kwargs)
-        if room_slug is not None:
-            self.fields['slug'].queryset = Room.objects.filter(
-                slug=room_slug
-            )
-
     name = forms.CharField(max_length=200, widget=forms.TextInput(
         attrs={'type': 'text', 'placeholder': 'Имя', 'class': 'reservation-form__input'}))
     last_name = forms.CharField(max_length=200, widget=forms.TextInput(
@@ -51,6 +42,15 @@ class RoomReservation(forms.Form):
         attrs={'type': 'text', 'placeholder': 'email', 'class': 'reservation-form__input'}))
     phone = PhoneNumberField(widget=forms.TextInput(
         attrs={'type': 'text', 'placeholder': 'Номер телефона', 'class': 'reservation-form__input'}))
+
+    title = forms.CharField(widget=forms.HiddenInput())
+
+    def __init__(self, *args, room_slug=None, **kwargs):
+        super(forms.Form, self).__init__(*args, **kwargs)
+        if room_slug is not None:
+            self.fields['title'].initial = Room.objects.get(
+                slug=room_slug
+            )
 
     def clean_email(self):
         new_email = self.cleaned_data['email']

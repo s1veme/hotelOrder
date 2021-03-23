@@ -110,7 +110,7 @@
                 {% csrf_token %}
                 <div class="reservation-form__wrap">
                   {{ form.name }} {{ form.last_name }} {{ form.email }}
-                  {{form.phone}}
+                  {{form.phone}} {{ form.title }}
 
                   <div class="reservation-form__btn">
                     <button class="button-request" type="submit">

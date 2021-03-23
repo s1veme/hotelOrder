@@ -129,7 +129,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_DIR = os.path.join(BASE_DIR, 'mainapp/static')
+STATIC_DIR = os.path.join(BASE_DIR, 'grizzly/static')
 STATICFILES_DIRS = [STATIC_DIR]
 
 MEDIA_URL = '/media/'
