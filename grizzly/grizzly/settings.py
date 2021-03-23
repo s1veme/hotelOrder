@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'phonenumber_field',
     'rest_framework',
     'mainapp',
     'snowpenguin.django.recaptcha3'
@@ -79,8 +80,12 @@ WSGI_APPLICATION = 'grizzly.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS': {
+            'database': 'grizzly',
+            'user': 'admin',
+            'password': 'admin',
+        }
     }
 }
 
@@ -124,7 +129,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_DIR = os.path.join(BASE_DIR, 'grizzly/static')
+STATIC_DIR = os.path.join(BASE_DIR, 'mainapp/static')
 STATICFILES_DIRS = [STATIC_DIR]
 
 MEDIA_URL = '/media/'

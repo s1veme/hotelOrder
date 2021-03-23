@@ -6,7 +6,7 @@ from django.views.generic.base import View
 from django.views.generic import DetailView, ListView
 
 from .models import Gallery, Room, Image, Review
-from .forms import ReviewForm
+from .forms import ReviewForm, RoomReservation
 
 
 class ReviewList(ListView):
@@ -40,6 +40,7 @@ class HomeView(View):
 class RoomDetail(DetailView):
     model = Room
     queryset = Room.objects.all()
+
     template_name = 'mainapp/room.html'
     slug_field = "slug"
 
@@ -48,7 +49,17 @@ class RoomDetail(DetailView):
 
         slug = self.kwargs['slug']
         images = Image.objects.filter(room__slug=slug)
+        form = RoomReservation(room_slug=slug)
 
-        context.update({'images': images})
+        context.update({'images': images, 'form': form})
 
         return context
+
+    def post(self, request, *args, **kwargs):
+        bound_form = RoomReservation(request.POST)
+
+        # if bound_form.is_valid():
+        #    new_application = bound_form.save()
+        #    return redirect('home')
+
+        return redirect('home')

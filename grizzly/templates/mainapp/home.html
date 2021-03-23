@@ -146,11 +146,11 @@
       <div class="container">
         <div class="gallery__wrap">
           <div class="images slider">
-            {% for images in gallery %}
+            {% for gallery in images %}
             <div class="image slider__item">
               <img src="{{ gallery.image.url }}" alt="" />
               <div class="image__text">
-                <p>{{ images.text }}</p>
+                <p>{{ gallery.text }}</p>
               </div>
             </div>
             {% endfor %}
@@ -225,7 +225,7 @@
           </div>
 
           <div class="rooms-cards rooms-slider">
-            {% for rooms in room %}
+            {% for room in rooms %}
             <div class="room-card rooms-slider__item">
               <div class="room__img">
                 <img src="{{ room.poster.url }}" alt="" />

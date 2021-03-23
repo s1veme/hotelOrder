@@ -1,15 +1,15 @@
-
 from django import forms
-from phonenumber_field.modelfields import PhoneNumberField
 from django.db import models
-from django.core.exceptions import ValidationError
-from snowpenguin.django.recaptcha3.fields import ReCaptchaField
-from django.contrib.admin.widgets import AdminDateWidget
-from django.forms.fields import DateField
 from .models import Room
+from .models import Review, Room
 
+from django.core.exceptions import ValidationError
 
-from .models import Review
+from snowpenguin.django.recaptcha3.fields import ReCaptchaField
+from phonenumber_field.formfields import PhoneNumberField
+from django.forms.fields import DateField
+
+from django.contrib.admin.widgets import AdminDateWidget
 
 
 class ReviewForm(forms.ModelForm):
@@ -32,18 +32,25 @@ class ReviewForm(forms.ModelForm):
         return new_email
 
 
-class Room_Reservation(forms.Form):
-    name = forms.CharField(max_length=200)
-    last_name = forms.CharField(max_length=200)
-    email = forms.EmailField()
-    phone = PhoneNumberField(null=False, blank=False, unique=True)
+class RoomReservation(forms.Form):
 
-    widgets = {
-                'last_name': forms.TextInput(attrs={'class': 'Room_Reservation', 'type': 'text', 'placeholder': 'Фамилия'}),
-                'name': forms.TextInput(attrs={'class': 'Room_Reservation', 'type': 'text', 'placeholder': 'Имя'}),               
-                'email': forms.TextInput(attrs={'class': 'Room_Reservation', 'type': 'text', 'placeholder': 'email'}),
-                'phone': forms.TextInput(attrs={'class': 'Room_Reservation', 'type': 'text', 'placeholder': 'Номер Телефона'}),
-}
+    slug = forms.ModelMultipleChoiceField(queryset=Room.objects.all())
+
+    def __init__(self, *args, room_slug=None, **kwargs):
+        super(forms.Form, self).__init__(*args, **kwargs)
+        if room_slug is not None:
+            self.fields['slug'].queryset = Room.objects.filter(
+                slug=room_slug
+            )
+
+    name = forms.CharField(max_length=200, widget=forms.TextInput(
+        attrs={'type': 'text', 'placeholder': 'Имя', 'class': 'reservation-form__input'}))
+    last_name = forms.CharField(max_length=200, widget=forms.TextInput(
+        attrs={'type': 'text', 'placeholder': 'Фамилия', 'class': 'reservation-form__input'}))
+    email = forms.EmailField(widget=forms.TextInput(
+        attrs={'type': 'text', 'placeholder': 'email', 'class': 'reservation-form__input'}))
+    phone = PhoneNumberField(widget=forms.TextInput(
+        attrs={'type': 'text', 'placeholder': 'Номер телефона', 'class': 'reservation-form__input'}))
 
     def clean_email(self):
         new_email = self.cleaned_data['email']
@@ -52,16 +59,17 @@ class Room_Reservation(forms.Form):
         return new_email
 
 
-class Main_Registration_Form(forms.Form):
-    number_selection = forms.ModelChoiceField(label="Выбрать номер", empty_label="Категория не выбрана", queryset=Room.objects.all())
+class MainRegistrationForm(forms.Form):
+    number_selection = forms.ModelChoiceField(
+        label="Выбрать номер", empty_label="Категория не выбрана", queryset=Room.objects.all())
     arrival_date = forms.DateField(label="Дата заезда", widget=AdminDateWidget)
-    departure_date = forms.DateField(label="Дата отъезда",widget=AdminDateWidget)
+    departure_date = forms.DateField(
+        label="Дата отъезда", widget=AdminDateWidget)
     email = forms.EmailField()
 
     widgets = {
-                'number_selection': forms.TextInput(attrs={'class': 'Main_Registration_Form', 'type': 'text'}),
-                'arrival date': forms.TextInput(attrs={'class': 'Main_Registration_Form', 'type': 'text'}),               
-                'departure date': forms.TextInput(attrs={'class': 'Main_Registration_Form', 'type': 'text'}),
-                'email': forms.TextInput(attrs={'class': 'Main_Registration_Form', 'type': 'text', 'placeholder': 'email'}),
-}
-
+        'number_selection': forms.TextInput(attrs={'class': 'Main_Registration_Form', 'type': 'text'}),
+        'arrival date': forms.TextInput(attrs={'class': 'Main_Registration_Form', 'type': 'text'}),
+        'departure date': forms.TextInput(attrs={'class': 'Main_Registration_Form', 'type': 'text'}),
+        'email': forms.TextInput(attrs={'class': 'Main_Registration_Form', 'type': 'text', 'placeholder': 'email'}),
+    }
