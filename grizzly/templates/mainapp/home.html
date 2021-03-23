@@ -78,7 +78,7 @@
             </div>
           </div>
           <form action="{% url 'home' %}" class="form-request" method="post">
-          {% csrf_token %}
+            {% csrf_token %}
             <div class="form-request__wrap">
               <div class="form-request__item">
                 <p>Выбрать номер</p>
@@ -126,7 +126,7 @@
             {{ form_reservation.email }}
           </div>
           <div class="button-request__form">
-            <input type="submit">Отправить</input>
+            <input type="submit" />
           </div>
         </div>
       </div>

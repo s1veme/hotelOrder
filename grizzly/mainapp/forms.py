@@ -64,9 +64,9 @@ class MainRegistrationForm(forms.Form):
         label="Выбрать номер", empty_label="Номер не выбран", queryset=Room.objects.all(), widget=forms.Select(attrs={'class': 'form-select__item'}))
 
     arrival_date = forms.DateField(
-        label="Дата заезда", widget=forms.SelectDateWidget(attrs={'style': 'padding: 10px 3px;'}))
+        label="Дата заезда", widget=forms.SelectDateWidget(attrs={'style': 'padding: 10px 3px; text-align: center;'}))
 
     departure_date = forms.DateField(
-        label="Дата отъезда", widget=forms.SelectDateWidget(attrs={'style': 'padding: 10px 3px;'}))
+        label="Дата отъезда", widget=forms.SelectDateWidget(attrs={'style': 'padding: 10px 3px; text-align: center;'}))
     email = forms.EmailField(widget=forms.EmailInput(
         attrs={'style': 'padding: 12px 3px;'}))

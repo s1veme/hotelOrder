@@ -23,7 +23,7 @@ class ReviewList(ListView):
         if bound_form.is_valid():
             new_review = bound_form.save()
             return redirect('reviews')
-        return render(request, self.template_name, {'reviews': self.queryset})
+        return render(request, 'mainapp/home.html')
 
 
 class HomeView(View):
