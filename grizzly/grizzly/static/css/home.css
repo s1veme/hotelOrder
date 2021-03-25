@@ -571,6 +571,25 @@ ul {
     padding: 20px 17px;
 }
 
+.success {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+
+    font-size: 16px;
+
+    position: absolute;
+    position: fixed;
+    display: inline-block;
+    padding: 15px;
+    color: #0f5132;
+    background-color: #d1e7dd;
+    border-color: #badbcc;
+    right: 0;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
 @media (max-width: 960px) {
     .container {
         max-width: 910px;

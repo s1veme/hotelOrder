@@ -25,6 +25,9 @@
   </head>
 
   <body>
+    {% include './messages.html' %}
+
+    {% block content %} {% endblock content %}
     <section class="section_100vh main-screen">
       <div class="container">
         <header class="header">
@@ -336,5 +339,6 @@
     <script src="{% static 'js/slick.min.js' %}"></script>
     <script src="{% static 'js/sliderHome.js' %}"></script>
     <script src="{% static 'js/sendForm.js' %}"></script>
+    <script src="{% static 'js/timer.js' %}"></script>
   </body>
 </html>

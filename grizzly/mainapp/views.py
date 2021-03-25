@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 
 from django.http import HttpResponse
 
+from django.contrib import messages
+
 from django.views.generic.base import View
 from django.views.generic import DetailView, ListView
 
@@ -84,6 +86,7 @@ class RoomDetail(DetailView):
 
         if bound_form.is_valid():
             text = sm.generate_message(data.dict())
+            messages.success(request, 'Ваша заявка успешно отправлена!')
             # email.create_message(text)
             # email.send_message()
 

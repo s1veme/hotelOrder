@@ -38,10 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'phonenumber_field',
     'rest_framework',
-    'mainapp',
-    'snowpenguin.django.recaptcha3'
+    'phonenumber_field',
+    'snowpenguin.django.recaptcha3',
+    'mainapp'
 ]
 
 MIDDLEWARE = [
