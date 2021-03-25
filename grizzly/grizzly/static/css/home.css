@@ -66,6 +66,10 @@ ul {
     width: 10%;
 }
 
+.logo img {
+    width: 100%;
+}
+
 .menu {
     width: 60%;
 }
