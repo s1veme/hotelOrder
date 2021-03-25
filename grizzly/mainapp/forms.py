@@ -52,12 +52,6 @@ class RoomReservation(forms.Form):
                 slug=room_slug
             )
 
-    def clean_email(self):
-        new_email = self.cleaned_data['email']
-        if Review.objects.filter(email=new_email).exists():
-            raise ValidationError('You cannot reuse the same email')
-        return new_email
-
 
 class MainRegistrationForm(forms.Form):
     number_selection = forms.ModelChoiceField(

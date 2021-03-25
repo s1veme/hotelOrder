@@ -48,7 +48,7 @@ class HomeView(View):
 
         if bound_form.is_valid():
             text = sm.generate_message_registration(data.dict())
-            print(text)
+
             # email.create_message(text)
             # email.send_message()
 
