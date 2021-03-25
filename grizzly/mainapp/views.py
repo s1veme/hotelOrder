@@ -8,6 +8,10 @@ from django.views.generic import DetailView, ListView
 from .models import Gallery, Room, Image, Review
 from .forms import ReviewForm, RoomReservation, MainRegistrationForm
 
+from .utils import sendMessage as sm
+
+email = sm.sendMessageToGmail()
+
 
 class ReviewList(ListView):
     model = Review
@@ -39,9 +43,15 @@ class HomeView(View):
         return render(request, 'mainapp/home.html', self.queryset_dict)
 
     def post(self, request, *args, **kwargs):
-        # TODO: Сделать уведомление и отправку на почту, валидацию.
+        data = request.POST
+        bound_form = MainRegistrationForm(data)
 
-        print(request.POST)
+        if bound_form.is_valid():
+            text = sm.generate_message_registration(data.dict())
+            print(text)
+            # email.create_message(text)
+            # email.send_message()
+
         return render(request, 'mainapp/home.html', self.queryset_dict)
 
 
@@ -64,7 +74,12 @@ class RoomDetail(DetailView):
         return context
 
     def post(self, request, *args, **kwargs):
-        # TODO: Отправка на почту
-        #bound_form = RoomReservation(request.POST)
+        data = request.POST
+        bound_form = RoomReservation(data)
+
+        if bound_form.is_valid():
+            text = sm.generate_message(data.dict())
+            email.create_message(text)
+            email.send_message()
 
         return redirect('home')

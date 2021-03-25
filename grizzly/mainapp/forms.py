@@ -61,7 +61,7 @@ class RoomReservation(forms.Form):
 
 class MainRegistrationForm(forms.Form):
     number_selection = forms.ModelChoiceField(
-        label="Выбрать номер", empty_label="Номер не выбран", queryset=Room.objects.all(), widget=forms.Select(attrs={'class': 'form-select__item'}))
+        label="Выбрать номер", empty_label="Номер не выбран", queryset=Room.objects.all(), to_field_name='title', widget=forms.Select(attrs={'class': 'form-select__item'}))
 
     arrival_date = forms.DateField(
         label="Дата заезда", widget=forms.SelectDateWidget(attrs={'style': 'padding: 10px 3px; text-align: center;'}))
