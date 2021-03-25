@@ -75,11 +75,16 @@ class RoomDetail(DetailView):
 
     def post(self, request, *args, **kwargs):
         data = request.POST
+        data = data.copy()
+
+        if not data['phone'].startswith('+'):
+            data['phone'] = f'+{data["phone"]}'
+
         bound_form = RoomReservation(data)
 
         if bound_form.is_valid():
             text = sm.generate_message(data.dict())
-            email.create_message(text)
-            email.send_message()
+            # email.create_message(text)
+            # email.send_message()
 
         return redirect('home')
