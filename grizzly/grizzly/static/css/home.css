@@ -21,7 +21,7 @@ select {
     outline: none;
 }
 
-.errors{
+.errors {
     text-align: center;
     margin-top: 17px;
 }
@@ -69,7 +69,6 @@ ul {
 
 .logo {
     width: 10%;
-
 }
 
 .logo img {
@@ -606,6 +605,23 @@ ul {
     margin-right: 20px;
 }
 
+.error {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    position: absolute;
+    position: fixed;
+    display: inline-block;
+    padding: 15px;
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+    right: 0;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
 .contacts {
     display: flex;
     font-family: Montserrat;
@@ -621,6 +637,10 @@ ul {
     font-size: 18px;
     font-weight: 500;
     color: #000;
+}
+
+.review-content__img {
+    width: 50%;
 }
 
 @media (max-width: 960px) {

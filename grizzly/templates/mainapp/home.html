@@ -1,43 +1,29 @@
-<!DOCTYPE html>
-{% load static %} {% load recaptcha3 %}
+<!DOCTYPE html> {% load static %} {% load recaptcha3 %}
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Alice&display=swap"
-      rel="stylesheet"
-    />
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}" />
     <link rel="stylesheet" href="{% static 'css/home.css' %}" />
     <link rel="stylesheet" href="{% static 'css/sliderHome.css' %}" /> {% recaptcha_init %} {% recaptcha_ready action_name='homepage' %}
 
-    {% recaptcha_init %} {% recaptcha_ready action_name='homepage' %}
+    <title>GRIZZLY</title>
+</head>
 
-    <title>GRIZLY</title>
-  </head>
-
-  <body>
-    {% include './messages.html' %}
-
-    {% block content %} {% endblock content %}
-    <section class="section_100vh main-screen">
-      <div class="container">
-
-
-        <header class="header">
-          <div class="logo" style="color: #fff">
-            <img src="/media/images/logo/Безымянный-2.svg" alt="">
-          </div>
+<body>
+    {% include './messages.html' %} {% block content %} {% endblock content %}
+    <section class="section_100vh main-screen" id="home">
+        <div class="container">
+            <header class="header">
+                <div class="logo">
+                    <a href="/"><img src="{% static 'img/logo.svg' %}" alt=""></a>
+                </div>
 
                 <div id="menubox" onclick="openFunction()">&#9776;</div>
                 <div id="menu" class="sidemenu">
@@ -53,7 +39,7 @@
                 <nav class="menu">
                     <ul>
                         <li class="menu__item">
-                            <a href="#main-screen__content">Главная</a>
+                            <a href="#home">Главная</a>
                         </li>
                         <li class="menu__item">
                             <a href="#gallery">О нас</a>
@@ -73,72 +59,69 @@
                     </ul>
                 </nav>
 
-          <div class="reservation">
-            <button class="button-request">Забронировать</button>
-          </div>
-        </header>
-
-
-        <section class="main-screen__content" id="main-screen__content">
-          <div class="main-screen__wrap">
-            <div class="main-screen__title">
-              <div class="title_text">
-                <h1>ГРИЗЛИ</h1>
-              </div>
-              <h1>Ваш комфорт для нас счастье</h1>
-            </div>
-          </div>
-          <form action="{% url 'home' %}" class="form-request" method="post">
-            {% csrf_token %}
-            <div class="form-request__wrap">
-              <div class="form-request__item">
-                <p>Выбрать номер</p>
-                {{ form_reservation.number_selection }}
-              </div>
-              <div class="form-request__item form-request__date">
-                <p>Дата заезда</p>
-                {{ form_reservation.arrival_date }}
-              </div>
-              <div class="form-request__item form-request__date">
-                <p>Дата выезда</p>
-                {{ form_reservation.departure_date}}
-              </div>
-              <div class="form-request__item">
-                <p>Ваш email</p>
-                {{ form_reservation.email }}
-              </div>
-            </div>
-            <div class="button-request__form">
-              <input type="submit" />
-            </div>
-          </form>
-        </section>
-      </div>
+                <div class="reservation">
+                    <a class="button-request" href="tel:+74736421893">Позвонить</a>
+                </div>
+            </header>
+            <section class="main-screen__content">
+                <div class="main-screen__wrap">
+                    <div class="main-screen__title">
+                        <p>GRIZZLY</p>
+                        <h1>Ваш комфорт для нас счастье</h1>
+                    </div>
+                </div>
+                <form action="{% url 'home' %}" class="form-request" method="post">
+                    {% csrf_token %}
+                    <div class="form-request__wrap">
+                        <div class="form-request__item">
+                            <p>Выбрать номер</p>
+                            {{ form_reservation.number_selection }}
+                        </div>
+                        <div class="form-request__item form-request__date">
+                            <p>Дата заезда</p>
+                            {{ form_reservation.arrival_date }}
+                        </div>
+                        <div class="form-request__item form-request__date">
+                            <p>Дата выезда</p>
+                            {{ form_reservation.departure_date}}
+                        </div>
+                        <div class="form-request__item">
+                            <p>Ваш email</p>
+                            {{ form_reservation.email }}
+                        </div>
+                    </div>
+                    <div class="button-request__form">
+                        <input type="submit" />
+                    </div>
+                </form>
+            </section>
+        </div>
     </section>
 
     <form action="" class="form-request_phone">
-      {% csrf_token %}
-      <div class="container">
-        <div class="form-request__wrap">
-          <div class="form-request__item">
-            <p>Выбрать номер</p>
-            {{ form_reservation.number_selection }}
-          </div>
-          <div class="form-request__item form-request__date">
-            <p>Дата заезда</p>
-            {{ form_reservation.arrival_date }}
-          </div>
-          <div class="form-request__item form-request__date">
-            <p>Дата выезда</p>
-            {{ form_reservation.departure_date}}
-          </div>
-          <div class="form-request__item">
-            <p>Ваш email</p>
-            {{ form_reservation.email }}
-          </div>
-          <div class="button-request__form">
-            <input type="submit" />
-          </div>
+        {% csrf_token %}
+        <div class="container">
+            <div class="form-request__wrap">
+                <div class="form-request__item">
+                    <p>Выбрать номер</p>
+                    {{ form_reservation.number_selection }}
+                </div>
+                <div class="form-request__item form-request__date">
+                    <p>Дата заезда</p>
+                    {{ form_reservation.arrival_date }}
+                </div>
+                <div class="form-request__item form-request__date">
+                    <p>Дата выезда</p>
+                    {{ form_reservation.departure_date}}
+                </div>
+                <div class="form-request__item">
+                    <p>Ваш email</p>
+                    {{ form_reservation.email }}
+                </div>
+                <div class="button-request__form">
+                    <input type="submit" />
+                </div>
+            </div>
         </div>
     </form>
 
@@ -177,40 +160,38 @@
                             <img src="{% static 'img/wifi.png' %}" alt="" />
                         </div>
 
-              <div class="advantages-card__text">
-                <h3>Бесплатный Wi-Fi</h3>
-                <p>
-                  Качественное покрытие Wi-Fi всей 
-                  территории гостиницы и прилегающих территорий
-                </p>
-              </div>
-            </div>
-            <div class="advantages-card">
-              <div class="advantages-card__img">
-                <img src="{% static 'img/cofe.png' %}" alt="" />
-              </div>
+                        <div class="advantages-card__text">
+                            <h3>Бесплатный Wi-Fi</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, eius?
+                            </p>
+                        </div>
+                    </div>
+                    <div class="advantages-card">
+                        <div class="advantages-card__img">
+                            <img src="{% static 'img/wifi.png' %}" alt="" />
+                        </div>
 
-              <div class="advantages-card__text">
-                <h3>Домашнее кофе</h3>
-                <p>
-                  Домашнее кофе, расположенное на первом этаже нашей гостиницы,
-                   известен домашним уютом и обширной разновидностью блюд.
-                </p>
-              </div>
-            </div>
-            <div class="advantages-card">
-              <div class="advantages-card__img">
-                <img src="{% static 'img/billiards.png' %}" alt="" />
-              </div>
+                        <div class="advantages-card__text">
+                            <h3>Бесплатный Wi-Fi</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, eius?
+                            </p>
+                        </div>
+                    </div>
+                    <div class="advantages-card">
+                        <div class="advantages-card__img">
+                            <img src="{% static 'img/wifi.png' %}" alt="" />
+                        </div>
 
-              <div class="advantages-card__text">
-                <h3>Бильярд</h3>
-                <p>
-                   Бильярд  есть прежде всего вид физической закалки организма,
-                   он  уравновешивает эмоции и 
-                  вырабатывает ряд качеств, необходимых человеку в жизни. 
-                </p>
-              </div>
+                        <div class="advantages-card__text">
+                            <h3>Бесплатный Wi-Fi</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, eius?
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -261,30 +242,13 @@
                     <p>Ваше мнение нам очень важно</p>
                 </div>
 
-          <div class="review-content">
-            <div class="review-content__img">
-              <img src="{% static 'img/background-review.jpg' %}" alt="" />
-            </div>
-            <div class="review-content__form">
-              <form
-                action="{% url 'reviews' %}"
-                class="review-form"
-                id="reviewForm"
-                method="post">
-                {% csrf_token %}
-                {% for field in form %}
-
-                {% if field.errors %}
-                <div class="errors">
-                  <span style="color: red;">{{ field.errors }}</span>
-                </div>
-                
-                {% endif %}
-
-                {{ field }}
-
-                {% endfor %}
-
+                <div class="review-content">
+                    <div class="review-content__img">
+                        <img src="{% static 'img/background-review.jpg' %}" alt="" />
+                    </div>
+                    <div class="review-content__form">
+                        <form action="{% url 'reviews' %}" class="review-form" id="reviewForm" method="post">
+                            {% csrf_token %} {{ form.email }} {{ form.name }} {{form.text}} {{ form.captcha }}
 
                             <button class="review__btn" type="submit">Отправить</button>
                         </form>
@@ -295,18 +259,20 @@
     </section>
 
     <section class="address" id="address">
-      <div class="container">
-        <div class="address__wrap">
-          <div class="address-title">
-            <h2>Наш адресс</h2>
-            <p>Если возникают вопросы, то позвоните по номеру в конце сайта</p>
-          </div>
-          <div class="our-address">
-            <div class="street">
-              <p>ул.Вокзальная, д.2-Б</p>
-            </div>
-            <div class="city">
-              <p>Воронежская обл., г.Нововоронеж</p>
+        <div class="container">
+            <div class="address__wrap">
+                <div class="address-title">
+                    <h2>Наш адресс</h2>
+                    <p>Если возникают вопросы, то позвоните по номеру в конце сайта</p>
+                </div>
+                <div class="our-address">
+                    <div class="street">
+                        <p>Малая Пионерская улица, 13с2</p>
+                    </div>
+                    <div class="city">
+                        <p>Москва, Россия, 115054</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -358,5 +324,6 @@
     <script src="{% static 'js/sliderHome.js' %}"></script>
     <script src="{% static 'js/sendForm.js' %}"></script>
     <script src="{% static 'js/timer.js' %}"></script>
-  </body>
+</body>
+
 </html>

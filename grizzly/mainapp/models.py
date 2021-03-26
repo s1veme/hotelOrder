@@ -69,11 +69,7 @@ class Review(models.Model):
     email = models.EmailField(unique=True)
     name = models.CharField("Имя", max_length=100, db_index=True)
     text = models.TextField("Сообщение", max_length=2500)
-<<<<<<< HEAD
-    date_pub = models.DateTimeField(default=date.today)
-=======
     date_pub = models.DateTimeField(default=timezone.now)
->>>>>>> e33f757265b456d2b47205248700d7cbbd720f52
 
     def __str__(self):
         return self.name

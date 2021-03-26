@@ -30,18 +30,10 @@ class ReviewList(ListView):
         if bound_form.is_valid():
             new_review = bound_form.save()
             return redirect('reviews')
-        return render (request,'mainapp/home.html', context=self.create_context(bound_form))
+        messages.error(request, 'Отзыв с таким email уже существует')
+        
+        return redirect('home')
 
-    def create_context(self, bound_form):
-        gallery = Gallery.objects.all()
-        rooms = Room.objects.all()
-        form_review = ReviewForm()
-        form_reservation = MainRegistrationForm()
-        queryset_dict = {'images': gallery, 'rooms': rooms,
-                     'form': bound_form, 'form_reservation': form_reservation}
-        
-        return queryset_dict
-        
 
 class HomeView(View):
     gallery = Gallery.objects.all()
@@ -65,7 +57,8 @@ class HomeView(View):
             # email.create_message(text)
             # email.send_message()
 
-        return render(request, 'mainapp/home.html', self.queryset_dict)
+        messages.success(request, 'Заявка успешно отправлена!')
+        return redirect('home')
 
 
 class RoomDetail(DetailView):
@@ -100,5 +93,7 @@ class RoomDetail(DetailView):
             messages.success(request, 'Ваша заявка успешно отправлена!')
             # email.create_message(text)
             # email.send_message()
-
+        else:
+            messages.error(request, 'Упс... Что-то пошло не так')
+        
         return redirect('home')
