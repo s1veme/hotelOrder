@@ -12,6 +12,7 @@ from .forms import ReviewForm, RoomReservation, MainRegistrationForm
 
 from .utils import sendMessage as sm
 
+
 email = sm.sendMessageToGmail()
 
 

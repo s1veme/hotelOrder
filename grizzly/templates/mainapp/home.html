@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 {% load static %} {% load recaptcha3 %}
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,7 +19,7 @@
 
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}" />
     <link rel="stylesheet" href="{% static 'css/home.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/sliderHome.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/sliderHome.css' %}" /> {% recaptcha_init %} {% recaptcha_ready action_name='homepage' %}
 
     {% recaptcha_init %} {% recaptcha_ready action_name='homepage' %}
 
@@ -38,39 +39,39 @@
             <img src="/media/images/logo/Безымянный-2.svg" alt="">
           </div>
 
-          <div id="menubox" onclick="openFunction()">&#9776;</div>
-          <div id="menu" class="sidemenu">
-            <a href="#main-screen__content">Главная</a>
-            <a href="#gallery">О нас</a>
-            <a href="#advantages">Услуги</a>
-            <a href="#rooms">Номера</a>
-            <a href="/reviews">Отзывы</a>
-            <a href="#address">Карта</a>
-            <a href="#" class="closebtn" onclick="closeFunction()">&times;</a>
-          </div>
+                <div id="menubox" onclick="openFunction()">&#9776;</div>
+                <div id="menu" class="sidemenu">
+                    <a href="#main-screen__content">Главная</a>
+                    <a href="#gallery">О нас</a>
+                    <a href="#advantages">Услуги</a>
+                    <a href="#rooms">Номера</a>
+                    <a href="/reviews">Отзывы</a>
+                    <a href="#address">Карта</a>
+                    <a href="#" class="closebtn" onclick="closeFunction()">&times;</a>
+                </div>
 
-          <nav class="menu">
-            <ul>
-              <li class="menu__item">
-                <a href="#main-screen__content">Главная</a>
-              </li>
-              <li class="menu__item">
-                <a href="#gallery">О нас</a>
-              </li>
-              <li class="menu__item">
-                <a href="#advantages">Услуги</a>
-              </li>
-              <li class="menu__item">
-                <a href="#rooms">Номера</a>
-              </li>
-              <li class="menu__item">
-                <a href="/reviews">Отзывы</a>
-              </li>
-              <li class="menu__item">
-                <a href="#address">Карта</a>
-              </li>
-            </ul>
-          </nav>
+                <nav class="menu">
+                    <ul>
+                        <li class="menu__item">
+                            <a href="#main-screen__content">Главная</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#gallery">О нас</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#advantages">Услуги</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#rooms">Номера</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="/reviews">Отзывы</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#address">Карта</a>
+                        </li>
+                    </ul>
+                </nav>
 
           <div class="reservation">
             <button class="button-request">Забронировать</button>
@@ -139,43 +140,42 @@
             <input type="submit" />
           </div>
         </div>
-      </div>
     </form>
 
     <section class="gallery" id="gallery">
-      <div class="container">
-        <div class="gallery__wrap">
-          <div class="images slider">
-            {% for gallery in images %}
-            <div class="image slider__item">
-              <img src="{{ gallery.image.url }}" alt="" />
-              <div class="image__text">
-                <p>{{ gallery.text }}</p>
-              </div>
+        <div class="container">
+            <div class="gallery__wrap">
+                <div class="images slider">
+                    {% for gallery in images %}
+                    <div class="image slider__item">
+                        <img src="{{ gallery.image.url }}" alt="" />
+                        <div class="image__text">
+                            <p>{{ gallery.text }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
-            {% endfor %}
-          </div>
         </div>
-      </div>
     </section>
 
     <section class="advantages" id="advantages">
-      <div class="container">
-        <div class="advantages__wrap">
-          <div class="advantages__text">
-            <div class="advantages__title">
-              <h2>Удобства и комфорт</h2>
-            </div>
-            <div class="advantages__description">
-              <p>В нашей гостинице есть все для комфортного отдыха</p>
-            </div>
-          </div>
+        <div class="container">
+            <div class="advantages__wrap">
+                <div class="advantages__text">
+                    <div class="advantages__title">
+                        <h2>Удобства и комфорт</h2>
+                    </div>
+                    <div class="advantages__description">
+                        <p>В нашей гостинице есть все для комфортного отдыха</p>
+                    </div>
+                </div>
 
-          <div class="advantages-cards">
-            <div class="advantages-card">
-              <div class="advantages-card__img">
-                <img src="{% static 'img/wifi.png' %}" alt="" />
-              </div>
+                <div class="advantages-cards">
+                    <div class="advantages-card">
+                        <div class="advantages-card__img">
+                            <img src="{% static 'img/wifi.png' %}" alt="" />
+                        </div>
 
               <div class="advantages-card__text">
                 <h3>Бесплатный Wi-Fi</h3>
@@ -212,56 +212,54 @@
                 </p>
               </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
     <section class="rooms" id="rooms">
-      <div class="container">
-        <div class="rooms__wrap">
-          <div class="rooms__title">
-            <h3>Наши номера</h3>
-            <p>Наши самые популярные номера</p>
-          </div>
+        <div class="container">
+            <div class="rooms__wrap">
+                <div class="rooms__title">
+                    <h3>Наши номера</h3>
+                    <p>Наши самые популярные номера</p>
+                </div>
 
-          <div class="rooms-cards rooms-slider">
-            {% for room in rooms %}
-            <div class="room-card rooms-slider__item">
-              <div class="room__img">
-                <img src="{{ room.poster.url }}" alt="" />
-              </div>
-              <div class="room-info">
-                <div class="room-info__text">
-                  <a href="">{{ room.title }}</a>
-                  <p>{{ room.short_description }}</p>
-                </div>
-                <div class="room-link">
-                  <a href="{{ room.get_absolute_url }}">
-                    <div class="room-link__text">
-                      <p>Больше</p>
-                      <img src="{% static 'img/arrow.png' %}" alt="" />
+                <div class="rooms-cards rooms-slider">
+                    {% for room in rooms %}
+                    <div class="room-card rooms-slider__item">
+                        <div class="room__img">
+                            <img src="{{ room.poster.url }}" alt="" />
+                        </div>
+                        <div class="room-info">
+                            <div class="room-info__text">
+                                <a href="">{{ room.title }}</a>
+                                <p>{{ room.short_description }}</p>
+                            </div>
+                            <div class="room-link">
+                                <a href="{{ room.get_absolute_url }}">
+                                    <div class="room-link__text">
+                                        <p>Больше</p>
+                                        <img src="{% static 'img/arrow.png' %}" alt="" />
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                  </a>
+                    {% endfor %}
                 </div>
-              </div>
+                <div class="more-rooms">
+                    <button>Больше номеров</button>
+                </div>
             </div>
-            {% endfor %}
-          </div>
-          <div class="more-rooms">
-            <button>Больше номеров</button>
-          </div>
         </div>
-      </div>
     </section>
 
     <section class="review">
-      <div class="container">
-        <div class="review__wrap">
-          <div class="review__title">
-            <h2>Отправьте свой отзыв</h2>
-            <p>Ваше мнение нам очень важно</p>
-          </div>
+        <div class="container">
+            <div class="review__wrap">
+                <div class="review__title">
+                    <h2>Отправьте свой отзыв</h2>
+                    <p>Ваше мнение нам очень важно</p>
+                </div>
 
           <div class="review-content">
             <div class="review-content__img">
@@ -288,12 +286,12 @@
                 {% endfor %}
 
 
-                <button class="review__btn" type="submit">Отправить</button>
-              </form>
+                            <button class="review__btn" type="submit">Отправить</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
     <section class="address" id="address">
@@ -310,49 +308,50 @@
             <div class="city">
               <p>Воронежская обл., г.Нововоронеж</p>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
-    <script
-      type="text/javascript"
-      charset="utf-8"
-      async
-      src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Adae9c3889c073b16b7e6adbdf077f5c8fb7e6ec7d038e91c7e09d894004994eb&amp;width=100%25&amp;height=462&amp;lang=ru_RU&amp;scroll=true"
-    ></script>
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Adae9c3889c073b16b7e6adbdf077f5c8fb7e6ec7d038e91c7e09d894004994eb&amp;width=100%25&amp;height=462&amp;lang=ru_RU&amp;scroll=true"></script>
 
     <footer class="footer">
-      <div class="container">
-        <div class="footer__wrap">
-          <div class="hostel-law">
-            <p>© 2021 гостиница все права защищены</p>
-          </div>
+        <div class="container">
+            <div class="footer__wrap">
+                <div class="hostel-law">
+                    <p>© 2021 гостиница все права защищены</p>
+                </div>
 
-          <nav class="menu">
-            <ul>
-              <li class="menu__item">
-                <a href="">Главная</a>
-              </li>
-              <li class="menu__item">
-                <a href="">О нас</a>
-              </li>
-              <li class="menu__item">
-                <a href="">Услуги</a>
-              </li>
-              <li class="menu__item">
-                <a href="">Номера</a>
-              </li>
-              <li class="menu__item">
-                <a href="">Отзывы</a>
-              </li>
-              <li class="menu__item">
-                <a href="">Карта</a>
-              </li>
-            </ul>
-          </nav>
+                <nav class="menu">
+                    <ul>
+                        <li class="menu__item">
+                            <a href="">Главная</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="">О нас</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="">Услуги</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="">Номера</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="">Отзывы</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="">Карта</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="contacts">
+                <div class="contacts-email">
+                    <a href="mailto:Grizli_36@mail.ru">Grizli_36@mail.ru</a>
+                </div>
+                <div class="contacts-phone">
+                    <a href="tel:+74736421893">+74736421893</a>
+                </div>
+            </div>
         </div>
-      </div>
     </footer>
     <script src="{% static 'js/jquery.js' %}"></script>
     <script src="{% static 'js/slick.min.js' %}"></script>

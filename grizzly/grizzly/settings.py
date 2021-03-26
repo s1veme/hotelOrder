@@ -84,7 +84,11 @@ DATABASES = {
         'OPTIONS': {
             'database': 'grizzly',
             'user': 'admin',
+<<<<<<< HEAD
             'password': 'vladislav_dudashvili_1993',
+=======
+            'password': 'admin',
+>>>>>>> e33f757265b456d2b47205248700d7cbbd720f52
         }
     }
 }
@@ -114,7 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
