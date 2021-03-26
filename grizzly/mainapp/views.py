@@ -30,6 +30,7 @@ class ReviewList(ListView):
             new_review = bound_form.save()
             return redirect('reviews')
         return render(request, 'mainapp/home.html')
+        #test
 
 
 class HomeView(View):
