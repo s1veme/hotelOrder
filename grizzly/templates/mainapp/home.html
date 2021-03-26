@@ -272,10 +272,19 @@
                 action="{% url 'reviews' %}"
                 class="review-form"
                 id="reviewForm"
-                method="post"
-              >
-                {% csrf_token %} {{ form.email }} {{ form.name }} {{form.text}}
-                {{ form.captcha }}
+                method="post">
+                {% csrf_token %}
+                {% for field in form %}
+
+                {% if field.errors %}
+                
+                <span style="color: red;">{{ field.errors }}</span>
+                {% endif %}
+
+                {{ field }}
+
+                {% endfor %}
+
 
                 <button class="review__btn" type="submit">Отправить</button>
               </form>

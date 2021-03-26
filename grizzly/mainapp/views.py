@@ -25,12 +25,20 @@ class ReviewList(ListView):
 
     def post(self, request, *args, **kwargs):
         bound_form = ReviewForm(request.POST)
-        print(request.POST)
-        print(bound_form.is_valid())
         if bound_form.is_valid():
             new_review = bound_form.save()
             return redirect('reviews')
-        return redirect ('home' )
+        return render (request,'mainapp/home.html', context=self.create_context(bound_form))
+
+    def create_context(self, bound_form):
+        gallery = Gallery.objects.all()
+        rooms = Room.objects.all()
+        form_review = ReviewForm()
+        form_reservation = MainRegistrationForm()
+        queryset_dict = {'images': gallery, 'rooms': rooms,
+                     'form': bound_form, 'form_reservation': form_reservation}
+        
+        return queryset_dict
         
 
 class HomeView(View):

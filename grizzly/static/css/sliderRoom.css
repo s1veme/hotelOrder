@@ -109,12 +109,12 @@ input {
 }
 
 .slider .slick-arrow.slick-prev {
-    background: url('../img/arrows/right.svg') 0 0 / 100% no-repeat;
+    background: url('../img/arrows/left.svg') 0 0 / 100% no-repeat;
 }
 
 .slider .slick-arrow.slick-next {
     margin-left: 70px;
-    background: url('../img/arrows/left.svg') 0 0 / 100% no-repeat;
+    background: url('../img/arrows/right.svg') 0 0 / 100% no-repeat;
 }
 
 .slider .slick-arrow.slick-disabled {
