@@ -277,8 +277,10 @@
                 {% for field in form %}
 
                 {% if field.errors %}
+                <div class="errors">
+                  <span style="color: red;">{{ field.errors }}</span>
+                </div>
                 
-                <span style="color: red;">{{ field.errors }}</span>
                 {% endif %}
 
                 {{ field }}

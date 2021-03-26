@@ -21,6 +21,11 @@ select {
     outline: none;
 }
 
+.errors{
+    text-align: center;
+    margin-top: 17px;
+}
+
 body {
     color: #fff;
 }
