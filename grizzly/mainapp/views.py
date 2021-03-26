@@ -31,7 +31,7 @@ class ReviewList(ListView):
             new_review = bound_form.save()
             return redirect('reviews')
         return redirect ('home' )
-        # test
+        
 
 class HomeView(View):
     gallery = Gallery.objects.all()
