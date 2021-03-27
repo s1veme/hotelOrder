@@ -256,12 +256,20 @@ ul {
     flex-wrap: wrap;
 }
 
+.advantages-card:first-child .advantages-card__img {
+    padding-bottom: 54px;
+}
+
+.advantages-card:nth-child(3) .advantages-card__img {
+    padding-bottom: 36px;
+}
+
 .advantages-card {
     width: 26%;
     margin: 0 20px;
-    padding: 100px 20px;
-    text-align: center;
+    padding: 75px 20px;
     background: rgba(255, 255, 255, 0.7);
+    text-align: center;
 }
 
 .advantages-card__text h3 {
