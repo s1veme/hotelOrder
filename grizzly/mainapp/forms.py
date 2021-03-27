@@ -22,7 +22,7 @@ class ReviewForm(forms.ModelForm):
         widgets = {
             'text': forms.TextInput(attrs={'class': 'form__review', 'type': 'text', 'placeholder': 'Напишите отзыв'}),
             'name': forms.TextInput(attrs={'class': 'review-form__item', 'type': 'text', 'placeholder': 'Имя'}),
-            'email': forms.TextInput(attrs={'class': 'review-form__item', 'type': 'text', 'placeholder': 'email'}),
+            'email': forms.EmailInput(attrs={'class': 'review-form__item', 'type': 'email', 'placeholder': 'email'}),
         }
 
     def clean_email(self):
