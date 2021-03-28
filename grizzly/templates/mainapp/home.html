@@ -19,7 +19,7 @@
 
 <body>
     {% include './messages.html' %} {% block content %} {% endblock content %}
-    <section class="section_100vh main-screen">
+    <section class="section_100vh main-screen" id="home">
         <div class="container">
 
 
@@ -30,7 +30,7 @@
 
                 <div id="menubox" onclick="openFunction()">&#9776;</div>
                 <div id="menu" class="sidemenu">
-                    <a href="#main-screen__content">Главная</a>
+                    <a href="#home">Главная</a>
                     <a href="#gallery">О нас</a>
                     <a href="#advantages">Услуги</a>
                     <a href="#rooms">Номера</a>
@@ -42,7 +42,7 @@
                 <nav class="menu">
                     <ul>
                         <li class="menu__item">
-                            <a href="#main-screen__content">Главная</a>
+                            <a href="#home">Главная</a>
                         </li>
                         <li class="menu__item">
                             <a href="#gallery">О нас</a>
@@ -63,12 +63,12 @@
                 </nav>
 
                 <div class="reservation">
-                    <button class="button-request">Забронировать</button>
+                    <a href="tel:+74736421893" class="button-request">Позвонить</a>
                 </div>
             </header>
 
 
-            <section class="main-screen__content" id="main-screen__content">
+            <section class="main-screen__content">
                 <div class="main-screen__wrap">
                     <div class="main-screen__title">
                         <div class="title_text">
