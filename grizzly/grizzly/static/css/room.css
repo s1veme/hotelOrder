@@ -282,6 +282,9 @@ ul {
     #menubox {
         display: block;
     }
+    .sidemenu {
+        display: block;
+    }
     .menu {
         display: none;
     }
