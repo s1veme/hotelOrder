@@ -48,8 +48,11 @@ class Gallery(models.Model):
         'Текст на картинке', max_length=30, help_text='Текст будет поверх картинки')
 
     class Meta:
-        verbose_name = 'галерея'
-        verbose_name_plural = 'галерею'
+        verbose_name = 'галерею'
+        verbose_name_plural = 'галерея'
+        
+    def __str__(self):
+        return f'{self.text}'
 
 
 class Image(models.Model):

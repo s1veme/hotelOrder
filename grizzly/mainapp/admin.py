@@ -18,7 +18,7 @@ class RoomAdmin(admin.ModelAdmin):
         return mark_safe(f'<img src={obj.poster.url} width="80" height="80">')
 
     get_image.short_description = 'Изображение'
-
+    
 
 admin.site.register(Room, RoomAdmin)
 admin.site.register(Gallery)
