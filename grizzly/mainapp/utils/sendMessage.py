@@ -25,7 +25,7 @@ class sendMessageToGmail():
         self.msg.attach(body_part)
 
     def send_message(self):
-        smtp_obj = smtplib.SMTP('smtp.gmail.com')
+        smtp_obj = smtplib.SMTP('smtp.mail.ru')
 
         smtp_obj.ehlo()
         smtp_obj.starttls()
@@ -43,10 +43,10 @@ def generate_message(data):
 
     _, name, last_name, email, phone, title = data.values()
 
-    return f'Имя: {name}\nФамилия: {last_name}\nemail: {email}\nТелефон: {phone}\nНазвание номера: {title}'
+    return f'Имя: {name}\nФамилия: {last_name}\nEsmail: {email}\nТелефон: {phone}\nНазвание номера: {title}'
 
 
 def generate_message_registration(data):
     data = list(data.values())
 
-    return f'Название комнаты: {data[1]}\nДата заезда: {data[2]}.{data[3]}.{data[4]}\nДата выезда: {data[5]}.{data[6]}.{data[7]}\nemail: {data[-1]}'
+    return f'Название комнаты: {data[1]}\nДата заезда: {data[2]}.{data[3]}.{data[4]}\nДата выезда: {data[5]}.{data[6]}.{data[7]}\nEmail: {data[-1]}'

@@ -54,8 +54,8 @@ class HomeView(View):
         if bound_form.is_valid():
             text = sm.generate_message_registration(data.dict())
 
-            # email.create_message(text)
-            # email.send_message()
+            email.create_message('Это тестовая заявка, не отвечайте на неё.', text)
+            email.send_message()
 
         messages.success(request, 'Заявка успешно отправлена!')
         return redirect('home')
@@ -91,8 +91,9 @@ class RoomDetail(DetailView):
         if bound_form.is_valid():
             text = sm.generate_message(data.dict())
             messages.success(request, 'Ваша заявка успешно отправлена!')
-            # email.create_message(text)
-            # email.send_message()
+            
+            email.create_message('Это тестовая заявка, не отвечайте на неё.', text)
+            email.send_message()
         else:
             messages.error(request, 'Упс... Что-то пошло не так')
         
