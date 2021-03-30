@@ -336,6 +336,11 @@ ul {
 }
 
 .room__img {
+    max-width: 100%;
+}
+
+.room__img img {
+    height: 400px;
     width: 100%;
 }
 
@@ -371,7 +376,7 @@ ul {
 
 .room-link {
     display: block;
-    margin-left: 20px;
+    margin-left: auto;
 }
 
 .review {

@@ -99,13 +99,15 @@ input {
 
 .slider .slick-arrow {
     position: absolute;
+    margin: 0 auto;
     bottom: 4%;
-    left: 30px;
     z-index: 10;
     font-size: 0;
     width: 30px;
     height: 60px;
     color: #000;
+    left: 47.5%;
+    margin: 0 -50px;
 }
 
 .slider .slick-arrow.slick-prev {
