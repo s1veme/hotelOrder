@@ -881,6 +881,14 @@ ul {
     .address-title p {
         max-width: 68%;
     }
+    .footer {
+        padding: 5px;
+    }
+    .footer__wrap {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 576px) {
