@@ -98,7 +98,7 @@
                         </div>
                     </div>
                     <div class="button-request__form">
-                        <input type="submit" />
+                        <input class="button-request__form-input" type="submit" />
                     </div>
                 </form>
             </section>
@@ -138,10 +138,8 @@
                 <div class="images slider">
                     {% for gallery in images %}
                     <div class="image slider__item">
-                        <img src="{{ gallery.image.url }}" alt="" />
-                        <div class="image__text">
-                            <p>{{ gallery.text }}</p>
-                        </div>
+                        <img class="home_slider_img" src="{{ gallery.image.url }}" alt="" />
+
                     </div>
                     {% endfor %}
                 </div>

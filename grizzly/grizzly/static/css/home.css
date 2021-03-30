@@ -38,6 +38,19 @@ ul {
     list-style-type: none;
 }
 
+.review-content__img img{
+    width: 100%;
+}
+
+.rooms__wrap img{
+    width: 100%;
+    cursor: pointer;
+}
+
+.room__img img{
+    height: 213px;
+}
+
 .button-request {
     font-family: Montserrat, sans-serif;
     color: #fff;
@@ -54,6 +67,12 @@ ul {
     width: 100%;
     max-width: 1140px;
     margin: 0 auto;
+}
+
+.home_slider_img{
+    max-width: 100%;
+    height: 800px;
+    text-align: center;
 }
 
 .main-screen {
@@ -182,7 +201,14 @@ ul {
     background: transparent;
     border: white 1px solid;
     padding: 10px 40px;
+    cursor: pointer;
 }
+
+.button-request__form-input:hover{
+    opacity: 0.7;
+    transition: 0.1s;
+}
+
 
 .gallery {
     margin: 100px 0;
@@ -199,7 +225,6 @@ ul {
 }
 
 .image img {
-    width: 100%;
 }
 
 .image__text {
@@ -749,6 +774,12 @@ ul {
         width: 50%;
         text-align: right;
     }
+    .reservation_room{
+        width: 50%;
+        text-align: right;
+    }
+    
+
     .review-content__img {
         display: none;
     }

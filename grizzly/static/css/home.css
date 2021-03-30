@@ -532,6 +532,7 @@ ul {
 }
 
 #menubox {
+    display: none;
     z-index: 2;
     font-size: 32px;
     cursor: pointer;

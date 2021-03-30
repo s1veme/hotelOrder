@@ -15,7 +15,7 @@ class Room(models.Model):
         'Описание', help_text='Будет показано на странице номера')
 
     short_description = models.CharField(
-        'Краткое описание', max_length=50, help_text='Будет показано на карточке номера')
+        'Краткое описание', max_length=150, help_text='Будет показано на карточке номера')
 
     price = models.PositiveSmallIntegerField('Цена')
 
@@ -24,7 +24,7 @@ class Room(models.Model):
     beds = models.PositiveSmallIntegerField('Количество кроватей')
 
     features = models.CharField(
-        'Особенности', max_length=75, help_text='Например - беспроводной интернет и телевизор')
+        'Особенности', max_length=100, help_text='Например - беспроводной интернет и телевизор')
 
     poster = models.ImageField(
         'Картинка для карточки', null=True, upload_to='images/poster/')
@@ -44,8 +44,6 @@ class Gallery(models.Model):
     image = models.ImageField(
         null=True, upload_to='images/gallery', default=None)
 
-    text = models.CharField(
-        'Текст на картинке', max_length=30, help_text='Текст будет поверх картинки')
 
     class Meta:
         verbose_name = 'галерею'
