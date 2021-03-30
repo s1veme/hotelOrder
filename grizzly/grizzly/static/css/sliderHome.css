@@ -93,7 +93,7 @@ button::-moz-focus-inner {
     opacity: 0.6;
 }
 
-.slider .slick-arrow:hover{
+.slider .slick-arrow:hover {
     opacity: 1;
     color: antiquewhite;
     cursor: pointer;
@@ -146,36 +146,6 @@ button::-moz-focus-inner {
 }
 
 .slider__item.slick-center {}
-
-@media (max-width:960px) {
-    .slider {
-        padding: 0px 40px;
-    }
-    .slider .slick-dots {
-        padding: 2rem 0;
-    }
-    .slider .slick-arrow {
-        margin: -50px -5px 0px -5px;
-    }
-    .image__text {
-        left: 1.8%;
-    }
-}
-
-@media (max-width: 576px) {
-    .slider {
-        padding: 0px 0px;
-    }
-    .slider .slick-dots {
-        padding: 2rem 0;
-    }
-    .slider .slick-arrow {
-        margin: -50px -5px 0px -5px;
-    }
-    .image__text {
-        display: none;
-    }
-}
 
 .rooms-slider {
     position: relative;
@@ -240,6 +210,18 @@ button::-moz-focus-inner {
 .rooms-rooms-slider__item.slick-center {}
 
 @media (max-width:960px) {
+    .slider {
+        padding: 0px 40px;
+    }
+    .slider .slick-dots {
+        padding: 2rem 0;
+    }
+    .slider .slick-arrow {
+        margin: -50px -5px 0px -5px;
+    }
+    .image__text {
+        left: 1.8%;
+    }
     .rooms-slider {
         padding: 40px;
     }
@@ -249,9 +231,36 @@ button::-moz-focus-inner {
     .rooms-slider .slick-arrow {
         margin: -50px -5px 0px -5px;
     }
+    .home_slider_img {
+        height: 600px;
+    }
+}
+
+@media (max-width: 720px) {
+    .slider {
+        padding: 0px;
+    }
+    .rooms-slider {
+        padding: 0;
+    }
+    .home_slider_img {
+        height: 500px;
+    }
 }
 
 @media (max-width: 576px) {
+    .slider {
+        padding: 0px 0px;
+    }
+    .slider .slick-dots {
+        padding: 2rem 0;
+    }
+    .slider .slick-arrow {
+        margin: -50px -5px 0px -5px;
+    }
+    .image__text {
+        display: none;
+    }
     .rooms-slider {
         padding: 0px 0px;
     }
@@ -263,5 +272,8 @@ button::-moz-focus-inner {
     }
     .image__text {
         display: none;
+    }
+    .home_slider_img {
+        height: 400px;
     }
 }

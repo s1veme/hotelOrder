@@ -38,16 +38,16 @@ ul {
     list-style-type: none;
 }
 
-.review-content__img img{
+.review-content__img img {
     width: 100%;
 }
 
-.rooms__wrap img{
+.rooms__wrap img {
     width: 100%;
     cursor: pointer;
 }
 
-.room__img img{
+.room__img img {
     height: 213px;
 }
 
@@ -69,7 +69,7 @@ ul {
     margin: 0 auto;
 }
 
-.home_slider_img{
+.home_slider_img {
     max-width: 100%;
     height: 800px;
     text-align: center;
@@ -204,11 +204,10 @@ ul {
     cursor: pointer;
 }
 
-.button-request__form-input:hover{
+.button-request__form-input:hover {
     opacity: 0.7;
     transition: 0.1s;
 }
-
 
 .gallery {
     margin: 100px 0;
@@ -222,9 +221,6 @@ ul {
     position: relative;
     display: flex;
     justify-content: center;
-}
-
-.image img {
 }
 
 .image__text {
@@ -774,12 +770,10 @@ ul {
         width: 50%;
         text-align: right;
     }
-    .reservation_room{
+    .reservation_room {
         width: 50%;
         text-align: right;
     }
-    
-
     .review-content__img {
         display: none;
     }

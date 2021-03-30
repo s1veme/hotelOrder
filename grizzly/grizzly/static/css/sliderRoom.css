@@ -110,7 +110,7 @@ input {
     opacity: 0.6;
 }
 
-.slider .slick-arrow:hover{
+.slider .slick-arrow:hover {
     opacity: 1;
     color: antiquewhite;
     cursor: pointer;
@@ -162,3 +162,10 @@ input {
 }
 
 .slider__item.slick-center {}
+
+@media (max-width: 576px) {
+    .slider {
+        width: 100%;
+        padding: 0;
+    }
+}

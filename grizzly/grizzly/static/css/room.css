@@ -7,7 +7,7 @@
 img {
     align-items: center;
     max-width: 100%;
-    height: 800px;
+    max-height: 800px;
 }
 
 button,
@@ -29,16 +29,13 @@ ul {
     list-style-type: none;
 }
 
-.room__img_slider__item{
+.room__img_slider__item {
     text-align: center;
 }
 
 .section_100vh {
     min-height: 100vh;
 }
-
-
-
 
 .container {
     width: 100%;
@@ -63,10 +60,15 @@ ul {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #000000;
+    padding: 20px;
 }
 
 .logo {
     width: 10%;
+}
+
+.logo img {
+    width: 100%;
 }
 
 .menu {
@@ -310,6 +312,24 @@ ul {
     .hostel-law {
         text-align: center;
         margin: 0 auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        max-width: 500px;
+    }
+    .characteristics__wrap h2 {
+        font-size: 25px;
+    }
+    .reservation__title h2 {
+        font-size: 30px;
+    }
+    .room-info {
+        padding-top: 20px;
+    }
+    .room__description p {
+        padding-top: 0px;
     }
 }
 
