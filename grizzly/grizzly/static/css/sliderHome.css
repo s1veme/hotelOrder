@@ -246,6 +246,12 @@ button::-moz-focus-inner {
     .home_slider_img {
         height: 500px;
     }
+    .rooms-slider {
+        padding: 0;
+    }
+    .room__img {
+        width: 100%;
+    }
 }
 
 @media (max-width: 576px) {

@@ -705,6 +705,9 @@ ul {
     .review {
         margin-top: 100px;
     }
+    address {
+        margin-top: 100px;
+    }
     .review-content__form {
         margin-left: 10px;
     }
@@ -774,6 +777,12 @@ ul {
         width: 50%;
         text-align: right;
     }
+    .review {
+        margin-top: 50px;
+    }
+    .address {
+        margin-top: 50px;
+    }
     .review-content__img {
         display: none;
     }
@@ -805,18 +814,25 @@ ul {
         justify-content: center;
     }
     .room-card {
-        width: 100%;
+        max-width: 80%;
+    }
+    .room-info {
+        margin: 0 auto;
+        width: 80%;
     }
     .room__img {
-        max-width: 70%;
+        max-width: 80%;
         margin: 0 auto;
     }
     .rooms__title {
         text-align: center;
-        padding-bottom: 50px;
+        padding-bottom: 25px;
     }
     .rooms__title h2 {
         padding-bottom: 14px;
+    }
+    .rooms-cards {
+        margin-top: 10px;
     }
     .room-info__text p {
         max-width: 250px;
