@@ -219,7 +219,16 @@ ul {
     .container {
         max-width: 700px;
     }
+    .header__wrap {
+        padding: 20px;
+    }
+    .reviews {
+        margin-top: 50px;
+    }
     #menubox {
+        display: block;
+    }
+    .sidemenu {
         display: block;
     }
     .menu {

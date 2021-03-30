@@ -219,7 +219,7 @@
                         </div>
                         <div class="room-info">
                             <div class="room-info__text">
-                                <a href="">{{ room.title }}</a>
+                                <a href="{{ room.get_absolute_url }}">{{ room.title }}</a>
                                 <p>{{ room.short_description }}</p>
                             </div>
                             <div class="room-link">

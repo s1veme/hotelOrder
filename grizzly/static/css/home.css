@@ -256,12 +256,20 @@ ul {
     flex-wrap: wrap;
 }
 
+.advantages-card:first-child .advantages-card__img {
+    padding-bottom: 54px;
+}
+
+.advantages-card:nth-child(3) .advantages-card__img {
+    padding-bottom: 36px;
+}
+
 .advantages-card {
     width: 26%;
     margin: 0 20px;
-    padding: 100px 20px;
-    text-align: center;
+    padding: 75px 20px;
     background: rgba(255, 255, 255, 0.7);
+    text-align: center;
 }
 
 .advantages-card__text h3 {
@@ -524,11 +532,11 @@ ul {
 }
 
 #menubox {
-    display: none;
     z-index: 2;
     font-size: 32px;
     cursor: pointer;
     transition: all .6s;
+    display: none;
 }
 
 .sidemenu {
@@ -562,10 +570,6 @@ ul {
     right: 25px;
     font-size: 36px;
     margin-left: 32px;
-}
-
-#menubox {
-    display: none;
 }
 
 .sidemenu {
@@ -643,6 +647,23 @@ ul {
     width: 50%;
 }
 
+.contacts {
+    display: flex;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    justify-content: space-between;
+    font-size: 16px;
+}
+
+.contacts-email a,
+.contacts-phone a {
+    font-family: Montserrat, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+}
+
 @media (max-width: 960px) {
     .container {
         max-width: 910px;
@@ -682,6 +703,9 @@ ul {
         max-width: 700px;
     }
     #menubox {
+        display: block;
+    }
+    .sidemenu {
         display: block;
     }
     .menu {
@@ -826,5 +850,41 @@ ul {
     .our-address {
         margin-top: 30px;
         text-align: center;
+    }
+    .contacts-email a,
+    .contacts-phone a {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 540px) {
+    .container {
+        max-width: 530px;
+    }
+    .header {
+        justify-content: space-around;
+    }
+    .advantages-card {
+        width: 70%;
+    }
+    .advantages-card__img {
+        max-width: 60%;
+        margin: 0 auto;
+    }
+    .advantages-card:first-child .advantages-card__img {
+        padding-bottom: 20px;
+    }
+    .advantages-card:nth-child(2) .advantages-card__img {
+        padding-bottom: 20px;
+    }
+    .advantages-card:nth-child(3) .advantages-card__img {
+        padding-bottom: 15px;
+    }
+    .advantages__title h2,
+    .rooms__title h3,
+    .review__title h2,
+    .address-title h2 {
+        font-size: 30px;
+        padding-bottom: 10px;
     }
 }

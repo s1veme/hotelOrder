@@ -1,3 +1,5 @@
+console.log('Okey')
+
 function openFunction() {
     document.getElementById("menu").style.width = "300px";
     document.getElementById("menubox").style.marginLeft = "300px";
