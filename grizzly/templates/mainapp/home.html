@@ -1,0 +1,337 @@
+<!DOCTYPE html> {% load static %} {% load recaptcha3 %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/sliderHome.css' %}" /> {% recaptcha_init %} {% recaptcha_ready action_name='homepage' %}
+
+    <title>GRIZLY</title>
+</head>
+
+<body>
+    {% include './messages.html' %} {% block content %} {% endblock content %}
+    <section class="section_100vh main-screen" id="home">
+        <div class="container">
+
+
+            <header class="header">
+                <div class="logo" style="color: #fff">
+                    <img src="{% static 'img/logo.svg' %}" alt="">
+                </div>
+
+                <div id="menubox" onclick="openFunction()">&#9776;</div>
+                <div id="menu" class="sidemenu">
+                    <a href="#home">Главная</a>
+                    <a href="#gallery">О нас</a>
+                    <a href="#advantages">Услуги</a>
+                    <a href="#rooms">Номера</a>
+                    <a href="/reviews">Отзывы</a>
+                    <a href="#address">Карта</a>
+                    <div href="" class="closebtn" onclick="closeFunction()">&times;</div>
+                </div>
+
+
+          <nav class="menu">
+            <ul>
+              <li class="menu__item">
+                <a href="#main-screen__content">Главная</a>
+              </li>
+              <li class="menu__item">
+                <a href="#gallery">О нас</a>
+              </li>
+              <li class="menu__item">
+                <a href="#advantages">Услуги</a>
+              </li>
+              <li class="menu__item">
+                <a href="#rooms">Номера</a>
+              </li>
+              <li class="menu__item">
+                <a href="/reviews">Отзывы</a>
+              </li>
+              <li class="menu__item">
+                <a href="#address">Карта</a>
+              </li>
+            </ul>
+          </nav>
+
+                <div class="reservation">
+                    <a href="tel:+74736421893" class="button-request">Позвонить</a>
+                </div>
+            </header>
+
+
+            <section class="main-screen__content">
+                <div class="main-screen__wrap">
+                    <div class="main-screen__title">
+                        <div class="title_text">
+                            <h1>ГРИЗЛИ</h1>
+                        </div>
+                        <h1>Ваш комфорт для нас счастье</h1>
+                    </div>
+                </div>
+                <form action="{% url 'home' %}" class="form-request" method="post">
+                    {% csrf_token %}
+                    <div class="form-request__wrap">
+                        <div class="form-request__item">
+                            <p>Выбрать номер</p>
+                            {{ form_reservation.number_selection }}
+                        </div>
+                        <div class="form-request__item form-request__date">
+                            <p>Дата заезда</p>
+                            {{ form_reservation.arrival_date }}
+                        </div>
+                        <div class="form-request__item form-request__date">
+                            <p>Дата выезда</p>
+                            {{ form_reservation.departure_date}}
+                        </div>
+                        <div class="form-request__item">
+                            <p>Ваш email</p>
+                            {{ form_reservation.email }}
+                        </div>
+                    </div>
+                    <div class="button-request__form">
+                        <input class="button-request__form-input" type="submit" />
+                    </div>
+                </form>
+            </section>
+        </div>
+    </section>
+
+    <form action="" class="form-request_phone">
+        {% csrf_token %}
+        <div class="container">
+            <div class="form-request__wrap">
+                <div class="form-request__item">
+                    <p>Выбрать номер</p>
+                    {{ form_reservation.number_selection }}
+                </div>
+                <div class="form-request__item form-request__date">
+                    <p>Дата заезда</p>
+                    {{ form_reservation.arrival_date }}
+                </div>
+                <div class="form-request__item form-request__date">
+                    <p>Дата выезда</p>
+                    {{ form_reservation.departure_date}}
+                </div>
+                <div class="form-request__item">
+                    <p>Ваш email</p>
+                    {{ form_reservation.email }}
+                </div>
+                <div class="button-request__form">
+                    <input type="submit" />
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="gallery__wrap">
+                <div class="images slider">
+                    {% for gallery in images %}
+                    <div class="image slider__item">
+                        <img class="home_slider_img" src="{{ gallery.image.url }}" alt="" />
+
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="advantages" id="advantages">
+        <div class="container">
+            <div class="advantages__wrap">
+                <div class="advantages__text">
+                    <div class="advantages__title">
+                        <h2>Удобства и комфорт</h2>
+                    </div>
+                    <div class="advantages__description">
+                        <p>В нашей гостинице есть все для комфортного отдыха</p>
+                    </div>
+                </div>
+
+                <div class="advantages-cards">
+                    <div class="advantages-card">
+                        <div class="advantages-card__img">
+                            <img src="{% static 'img/cardIcons/wifi.svg' %}" alt="" />
+                        </div>
+
+                        <div class="advantages-card__text">
+                            <h3>Бесплатный Wi-Fi</h3>
+                            <p>
+                                Качественное покрытие Wi-Fi всей территории гостиницы и прилегающих территорий
+                            </p>
+                        </div>
+                    </div>
+                    <div class="advantages-card">
+                        <div class="advantages-card__img">
+                            <img src="{% static 'img/cardIcons/cofe.svg' %}" alt="" />
+                        </div>
+
+                        <div class="advantages-card__text">
+                            <h3>Домашнее кофе</h3>
+                            <p>
+                                Домашнее кофе, расположенное на первом этаже нашей гостиницы, известен домашним уютом и обширной разновидностью блюд.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="advantages-card">
+                        <div class="advantages-card__img">
+                            <img src="{% static 'img/cardIcons/billiards.svg' %}" alt="" />
+                        </div>
+
+                        <div class="advantages-card__text">
+                            <h3>Бильярд</h3>
+                            <p>
+                                Бильярд есть прежде всего вид физической закалки организма, он уравновешивает эмоции и вырабатывает ряд качеств, необходимых человеку в жизни.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="rooms" id="rooms">
+        <div class="container">
+            <div class="rooms__wrap">
+                <div class="rooms__title">
+                    <h3>Наши номера</h3>
+                    <p>Наши самые популярные номера</p>
+                </div>
+
+                <div class="rooms-cards rooms-slider">
+                    {% for room in rooms %}
+                    <div class="room-card rooms-slider__item">
+                        <div class="room__img">
+                            <img src="{{ room.poster.url }}" alt="" />
+                        </div>
+                        <div class="room-info">
+                            <div class="room-info__text">
+                                <a href="">{{ room.title }}</a>
+                                <p>{{ room.short_description }}</p>
+                            </div>
+                            <div class="room-link">
+                                <a href="{{ room.get_absolute_url }}">
+                                    <div class="room-link__text">
+                                        <p>Больше</p>
+                                        <img src="{% static 'img/arrow.png' %}" alt="" />
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="more-rooms">
+                    <button>Больше номеров</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="review">
+        <div class="container">
+            <div class="review__wrap">
+                <div class="review__title">
+                    <h2>Отправьте свой отзыв</h2>
+                    <p>Ваше мнение нам очень важно</p>
+                </div>
+
+                <div class="review-content">
+                    <div class="review-content__img">
+                        <img src="{% static 'img/background-review.jpg' %}" alt="" />
+                    </div>
+                    <div class="review-content__form">
+                        <form action="{% url 'reviews' %}" class="review-form" id="reviewForm" method="post">
+                            {% csrf_token %} {% for field in form %} {{ field }} {% endfor %}
+
+
+                            <button class="review__btn" type="submit">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="address" id="address">
+        <div class="container">
+            <div class="address__wrap">
+                <div class="address-title">
+                    <h2>Наш адресс</h2>
+                    <p>Если возникают вопросы, то позвоните по номеру в конце сайта</p>
+                </div>
+                <div class="our-address">
+                    <div class="street">
+                        <p>ул.Вокзальная, д.2-Б</p>
+                    </div>
+                    <div class="city">
+                        <p>Воронежская обл., г.Нововоронеж</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Adae9c3889c073b16b7e6adbdf077f5c8fb7e6ec7d038e91c7e09d894004994eb&amp;width=100%25&amp;height=462&amp;lang=ru_RU&amp;scroll=true"></script>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrap">
+                <div class="hostel-law">
+                    <p>© 2021 гостиница все права защищены</p>
+                </div>
+
+                <nav class="menu">
+                    <ul>
+                        <li class="menu__item">
+                            <a href="#home">Главная</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#gallery">О нас</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#advantages">Услуги</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#rooms">Номера</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="/reviews">Отзывы</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#address">Карта</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="contacts">
+                <div class="contacts-email">
+                    <a href="mailto:Grizli_36@mail.ru">Grizli_36@mail.ru</a>
+                </div>
+                <div class="contacts-phone">
+                    <a href="tel:+74736421893">+74736421893</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="{% static 'js/menu.js' %}"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/slick.min.js' %}"></script>
+    <script src="{% static 'js/sliderHome.js' %}"></script>
+    <script src="{% static 'js/sendForm.js' %}"></script>
+    <script src="{% static 'js/timer.js' %}"></script>
+</body>
+
+</html>
