@@ -82,6 +82,10 @@ button::-moz-focus-inner {
     position: relative;
 }
 
+.home_slider_img{
+    height: 700px;
+}
+
 .slider .slick-arrow {
     position: absolute;
     top: 50%;
@@ -119,6 +123,19 @@ button::-moz-focus-inner {
     justify-content: center;
 }
 
+.slick-prev{
+    cursor: pointer;
+}
+
+.slick-next{
+    cursor: pointer;
+}
+
+.slider .slick-dots:hover{
+    opacity: 0.7;
+    transition: 0.2s;
+}
+
 .slider .slick-dots li {
     list-style: none;
     margin: 0px 10px;
@@ -137,12 +154,28 @@ button::-moz-focus-inner {
     border: 1px solid #000;
 }
 
+.gallery__wrap{
+
+
+}
+
+.slick-list{
+
+
+}
+
+.images{
+    margin: 0 auto;
+
+}
+
 .slider__item {
-    padding: 0px 15px;
+    padding: 10px 15px;
+
 }
 
 .slider__item img {
-    max-width: 100%;
+
 }
 
 .slider__item.slick-center {}

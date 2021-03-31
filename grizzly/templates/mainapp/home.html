@@ -213,7 +213,9 @@
                     {% for room in rooms %}
                     <div class="room-card rooms-slider__item">
                         <div class="room__img">
-                            <img src="{{ room.poster.url }}" alt="" />
+                            <a href="{{ room.get_absolute_url }}" class="">
+                                <img src="{{ room.poster.url }}" alt="" />
+                            </a>
                         </div>
                         <div class="room-info">
                             <div class="room-info__text">

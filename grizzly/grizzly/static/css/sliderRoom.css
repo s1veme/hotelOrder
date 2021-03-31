@@ -24,6 +24,10 @@ input {
     outline: none;
 }
 
+img{
+    max-height: 740px;
+}
+
 
 /* Основные стили */
 
