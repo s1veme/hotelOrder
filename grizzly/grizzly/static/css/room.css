@@ -33,12 +33,9 @@ ul {
     text-align: center;
 }
 
-.reservation{
+.reservation {
     text-align: center;
-
 }
-
-
 
 .section_100vh {
     min-height: 100vh;
@@ -59,11 +56,11 @@ ul {
     cursor: pointer;
 }
 
-.logo{
+.logo {
     cursor: pointer;
 }
 
-.button-request:hover{
+.button-request:hover {
     opacity: 0.8;
     transition: 0.1s;
 }
@@ -168,7 +165,6 @@ ul {
 .room__wrap {
     padding-top: 100px;
     text-align: center;
-
 }
 
 .room-info {
@@ -217,10 +213,6 @@ ul {
     font-weight: normal;
     font-size: 18px;
     color: #8E8E8E;
-}
-
-.reservation {
-    margin-top: 150px;
 }
 
 .reservation__title {
