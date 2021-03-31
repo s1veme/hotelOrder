@@ -11,7 +11,7 @@ html {
 }
 
 img {
-    width: 100%;
+
 }
 
 button,
@@ -349,11 +349,12 @@ ul {
 
 .rooms-cards {
     margin-top: 50px;
+
 }
 
 .room-card {
     padding: 30px;
-    width: 30%;
+    width: 40%;
 }
 
 .room__img {
@@ -361,7 +362,7 @@ ul {
 }
 
 .room__img img {
-    height: 400px;
+    height: 250px;
     width: 100%;
 }
 
@@ -452,6 +453,10 @@ ul {
     color: #8E8E8E;
 }
 
+.logo{
+    cursor: pointer;
+}
+
 .form__review {
     padding: 50px 100px;
     padding-left: 10px;
@@ -478,7 +483,15 @@ ul {
     border: white 1px solid;
     padding: 15px 40px;
     background: #B9715E;
+    cursor: pointer;
 }
+
+.review__btn:hover{
+    opacity: 0.8;
+    transition: 0.1s;
+}
+
+
 
 .address {
     margin-top: 150px;

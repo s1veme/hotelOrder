@@ -6,6 +6,7 @@ $(document).ready(function() {
         autoplay: true,
         speed: 1000,
         autoplaySpeed: 5000,
+        adaptiveHeight:true,
         responsive: [{
                 breakpoint: 768,
                 settings: {

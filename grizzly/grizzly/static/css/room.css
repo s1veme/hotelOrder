@@ -33,6 +33,13 @@ ul {
     text-align: center;
 }
 
+.reservation{
+    text-align: center;
+
+}
+
+
+
 .section_100vh {
     min-height: 100vh;
 }
@@ -49,6 +56,16 @@ ul {
     border: none;
     background: #B9715E;
     padding: 16px 24px;
+    cursor: pointer;
+}
+
+.logo{
+    cursor: pointer;
+}
+
+.button-request:hover{
+    opacity: 0.8;
+    transition: 0.1s;
 }
 
 .header {
@@ -150,6 +167,8 @@ ul {
 
 .room__wrap {
     padding-top: 100px;
+    text-align: center;
+
 }
 
 .room-info {

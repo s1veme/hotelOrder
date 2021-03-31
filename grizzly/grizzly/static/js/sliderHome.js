@@ -6,6 +6,7 @@ $(document).ready(function() {
         autoplay: true,
         speed: 1000,
         autoplaySpeed: 5000,
+        adaptiveHeight:true,
         responsive: [{
                 breakpoint: 768,
                 settings: {
@@ -31,6 +32,7 @@ $(document).ready(function() {
         arrows: true,
         dots: true,
         slidesToShow: 3,
+        adaptiveHeight:true,
         speed: 1000,
         responsive: [{
                 breakpoint: 961,
