@@ -84,7 +84,7 @@ DATABASES = {
         'OPTIONS': {
             'database': 'grizzly',
             'user': 'admin',
-            'password': 'admin',
+            'password': 'vladislav_dudashvili_1993',
         }
     }
 }
