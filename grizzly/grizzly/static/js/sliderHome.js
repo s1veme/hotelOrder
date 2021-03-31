@@ -41,6 +41,14 @@ $(document).ready(function() {
                 }
             },
             {
+                breakpoint: 790,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 1
+                }
+            },
+            
+            {
                 breakpoint: 768,
                 settings: {
                     arrows: false,

@@ -725,6 +725,27 @@ ul {
     .form-select__item {
         padding: 7px 6px;
     }
+    .rooms__title{
+        text-align: center;
+    }
+}
+
+@media (max-width: 790px){
+    .rooms__title{
+        text-align: center;
+    }
+    .rooms-cards{
+        max-width: 544px;
+        margin: 0 auto;
+    }
+    .review-content{
+        margin-left: 18px;
+    }
+    .review-content__img{
+        margin-top: 54px;
+    }
+    
+
 }
 
 @media (max-width: 720px) {
@@ -944,5 +965,12 @@ ul {
     .address-title h2 {
         font-size: 30px;
         padding-bottom: 10px;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .images{
+        display: none;
     }
 }
