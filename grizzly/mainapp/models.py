@@ -44,13 +44,12 @@ class Gallery(models.Model):
     image = models.ImageField(
         null=True, upload_to='images/gallery', default=None)
 
-
     class Meta:
         verbose_name = 'галерею'
         verbose_name_plural = 'галерея'
         
     def __str__(self):
-        return f'{self.text}'
+        return f'{self.image.url}'
 
 
 class Image(models.Model):
