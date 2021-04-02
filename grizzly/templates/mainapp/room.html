@@ -1,1 +1,151 @@
-<!DOCTYPE html> {% load static %}<html lang=en><meta charset=UTF-8><meta content="IE=edge"http-equiv=X-UA-Compatible><meta content="width=device-width,initial-scale=1"name=viewport><link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"rel=stylesheet><link href="https://fonts.googleapis.com/css2?family=Alice&display=swap"rel=stylesheet><link href="{% static 'css/normalize.css' %}"rel=stylesheet><link href="{% static 'css/room.css' %}"rel=stylesheet><link href="{% static 'css/sliderRoom.css' %}"rel=stylesheet><title>ROOM</title><header class=header><div class=container><div class=header__wrap><div class=logo><a href=/ ><img alt=""src="{% static 'img/logo.svg' %}"height=150 viewbox="0 0 150 150"width=150></a></div><div id=menubox onclick=openFunction()>☰</div><div class=sidemenu id=menu><a href=/ >Главная</a> <a href=#room>Номер</a> <a href=#reservation>Забронировать</a><div class=closebtn href=# onclick=closeFunction()>×</div></div><nav class=menu><ul><li class=menu__item><a href=/ >Главная</a><li class=menu__item><a href=#room>Номер</a><li class=menu__item><a href=#reservation>Забронировать</a></ul></nav><div class=reservation><a href=tel:+74736421893 class=button-request>Позвонить</a></div></div></div></header><main><section class="section_100vh room"id=room><div class=container><div class=room__wrap><div class=slider>{% for image in images %}<div class="room__img slider__item"><img alt=""src="{{ image.image.url }}"></div>{% endfor %}</div></div><div class=room-info><div class=room__title><h1>{{ room.title }}</h1></div><div class=room__description><p>{{ room.description }}</div></div></div></section><section class="section_100vh additional-info"><div class=container><div class=characteristics><div class=characteristics__wrap><h2>Основные характеристики</h2><p>{{ room.price }} рублей за сутки<p>{{ room.size }} кв. метра<p>{{ room.beds }} кровати</div></div><div class=reservation id=reservation><div class=reservation__wrap><div class=reservation__title><h2>Заполните форму для брони номера</h2></div></div><div><form action="{{ room.get_absolute_url }}"class=reservation-form method=post>{% csrf_token %}<div class=reservation-form__wrap>{{ form.name }} {{ form.last_name }} {{ form.email }} {{form.phone}} {{ form.title }}<div class=reservation-form__btn><button class=button-request type=submit>Забронировать</button></div></div></form></div></div></div></section></main><footer class=footer><div class=container><div class=footer__wrap><div class=hostel-law><p>© 2021 гостиница все права защищены</div><nav class=menu><ul><li class=menu__item><a href=/ >Главная</a><li class=menu__item><a href=#room><b>Номер</b></a><li class=menu__item><a href=#reservation>Забронировать</a></ul></nav></div></div></footer><script src="{% static 'js/menu.js' %}"></script><script src="{% static 'js/jquery.js' %}"></script><script src="{% static 'js/slick.min.js' %}"></script><script src="{% static 'js/sliderRoom.js' %}"></script><script src="{% static 'js/sendForm.js' %}"></script>
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/room.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/sliderRoom.css' %}" />
+
+    <title>Room - {{ room.title }}</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__wrap">
+                <div class="logo">
+                    <a href="/">
+                        <img src="{% static 'img/logo.svg' %}" alt="" width="150" height="150" viewBox="0 0 150 150">
+                    </a>
+                </div>
+
+                <div id="menubox" onclick="openFunction()">&#9776;</div>
+                <div id="menu" class="sidemenu">
+                    <a href="/">Главная</a>
+                    <a href="#room">Номер</a>
+                    <a href="#reservation">Забронировать</a>
+                    <div href="#" class="closebtn" onclick="closeFunction()">&times;</div>
+                </div>
+
+                <nav class="menu">
+                    <ul>
+                        <li class="menu__item">
+                            <a href="/">Главная</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#room">Номер</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#reservation">Забронировать</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="reservation">
+                    <a href="tel:+74736421893" class="button-request">Позвонить</a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="room section_100vh" id="room">
+            <div class="container">
+                <div class="room__wrap">
+                    <div class="slider">
+                        {% for image in images %}
+                        <div class="room__img slider__item">
+                            <img src="{{ image.image.url }}" alt="" />
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="room-info">
+                    <div class="room__title">
+                        <h1>{{ room.title }}</h1>
+                    </div>
+                    <div class="room__description">
+                        <p>{{ room.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="additional-info section_100vh">
+            <div class="container">
+                <div class="characteristics">
+                    <div class="characteristics__wrap">
+                        <h2>Основные характеристики</h2>
+
+                        <p>{{ room.price }} рублей за сутки</p>
+                        <p>{{ room.size }} кв. метра</p>
+                        <p>{{ room.beds }} кровати</p>
+                    </div>
+                </div>
+
+                <div class="reservation" id="reservation">
+                    <div class="reservation__wrap">
+                        <div class="reservation__title">
+                            <h2>Заполните форму для брони номера</h2>
+                        </div>
+                    </div>
+
+                    <div>
+                        <form action="{{ room.get_absolute_url }}" class="reservation-form" method="post">
+                            {% csrf_token %}
+                            <div class="reservation-form__wrap">
+                                {{ form.name }} {{ form.last_name }} {{ form.email }} {{form.phone}} {{ form.title }}
+
+                                <div class="reservation-form__btn">
+                                    <button class="button-request" type="submit">
+                      Забронировать
+                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrap">
+                <div class="hostel-law">
+                    <p>© 2021 гостиница все права защищены</p>
+                </div>
+
+                <nav class="menu">
+                    <ul>
+                        <li class="menu__item">
+                            <a href="/">Главная</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#room"><b>Номер</b></a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#reservation">Забронировать</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+    <script src="{% static 'js/menu.js' %}"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/slick.min.js' %}"></script>
+    <script src="{% static 'js/sliderRoom.js' %}"></script>
+    <script src="{% static 'js/sendForm.js' %}"></script>
+</body>
+
+</html>
