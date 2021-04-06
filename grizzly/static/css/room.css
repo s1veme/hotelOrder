@@ -1,11 +1,17 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; 
+}
+
+html {
+	overflow-x: hidden;
 }
 
 img {
+    align-items: center;
     max-width: 100%;
+    max-height: 800px;
 }
 
 button,
@@ -27,6 +33,14 @@ ul {
     list-style-type: none;
 }
 
+.room__img_slider__item {
+    text-align: center;
+}
+
+.reservation {
+    text-align: center;
+}
+
 .section_100vh {
     min-height: 100vh;
 }
@@ -43,6 +57,16 @@ ul {
     border: none;
     background: #B9715E;
     padding: 16px 24px;
+    cursor: pointer;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.button-request:hover {
+    opacity: 0.8;
+    transition: 0.1s;
 }
 
 .header {
@@ -54,11 +78,15 @@ ul {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #000000;
-    padding: 30px 0;
+    padding: 20px;
 }
 
 .logo {
     width: 10%;
+}
+
+.logo img {
+    width: 100%;
 }
 
 .menu {
@@ -140,6 +168,7 @@ ul {
 
 .room__wrap {
     padding-top: 100px;
+    text-align: center;
 }
 
 .room-info {
@@ -188,10 +217,6 @@ ul {
     font-weight: normal;
     font-size: 18px;
     color: #8E8E8E;
-}
-
-.reservation {
-    margin-top: 150px;
 }
 
 .reservation__title {
@@ -270,10 +295,24 @@ ul {
     width: 70%;
 }
 
+.room-reservation {
+	margin-top: 80px;
+}
+
 @media (max-width: 960px) {
     .container {
         max-width: 910px;
     }
+    .room__title{
+        text-align: center;
+    }
+    .room__description{
+        text-align: center;
+    }
+    .characteristics__wrap{
+        text-align: center;
+    }
+
 }
 
 @media (max-width: 720px) {
@@ -303,10 +342,98 @@ ul {
         text-align: center;
         margin: 0 auto;
     }
+    .characteristics {
+        text-align: center;
+        margin: 0 auto;
+        width: 80%;
+        margin-top: 100px;
+    }
+    .reservation__title h2 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        max-width: 500px;
+    }
+    .characteristics__wrap h2 {
+        font-size: 25px;
+    }
+    .reservation__title h2 {
+        font-size: 30px;
+    }
+    .room-info {
+        padding-top: 20px;
+    }
+    .room__description p {
+        padding-top: 0px;
+    }
+    .room-reservation {
+        margin-top: 70px;
+    }
 }
 
 @media (max-width: 540px) {
     .container {
         max-width: 500px;
+    }
+}
+
+@media (max-width: 360px) {
+    .container {
+        max-width: 350px;
+    }
+
+    .room__title {
+        font-size: 30px;
+    }
+
+    .room__description {
+        font-size: 14px;
+    }
+
+    .characteristics__wrap h2 {
+        font-size: 22px;
+    }
+
+    .characteristics__wrap p {
+        font-size: 15px;
+    }
+
+    .reservation__title h2 {
+        font-size: 27px;
+    }
+
+    .reservation-form__wrap {
+        padding: 35px 30px;
+    }
+
+    .button-request {
+        font-size: 15px;
+    }
+
+}
+
+@media (max-width: 300px) {
+    .container {
+        max-width: 300px;
+    }
+
+    .reservation-form__wrap {
+        border: none; 
+        padding: 0px 30px;
+    }
+
+    .reservation-form__input {
+        padding: 7px;
+    }
+
+    .button-request {
+        padding: 14px 47px;
+    }
+
+    .reservation-form {
+        margin-top: 25px;
     }
 }

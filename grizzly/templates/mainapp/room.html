@@ -29,8 +29,8 @@
                 <div id="menubox" onclick="openFunction()">&#9776;</div>
                 <div id="menu" class="sidemenu">
                     <a href="/">Главная</a>
-                    <a href="#room">Номер</a>
-                    <a href="#reservation">Забронировать</a>
+                    <a href="#room" onclick="closeFunction()">Номер</a>
+                    <a href="#room-reservation" onclick="closeFunction()">Забронировать</a>
                     <div href="#" class="closebtn" onclick="closeFunction()">&times;</div>
                 </div>
 
@@ -43,7 +43,7 @@
                             <a href="#room">Номер</a>
                         </li>
                         <li class="menu__item">
-                            <a href="#reservation">Забронировать</a>
+                            <a href="#room-reservation">Забронировать</a>
                         </li>
                     </ul>
                 </nav>
@@ -92,7 +92,7 @@
                     </div>
                 </div>
 
-                <div class="reservation" id="reservation">
+                <div class="room-reservation" id="room-reservation">
                     <div class="reservation__wrap">
                         <div class="reservation__title">
                             <h2>Заполните форму для брони номера</h2>

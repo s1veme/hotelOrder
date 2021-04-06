@@ -1,3 +1,1 @@
-setTimeout(function(){
-	$("#message").hide(200);
-}, 5000);
+setTimeout(function(){$("#message").hide(200)},5e3)
